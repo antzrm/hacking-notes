@@ -1,0 +1,367 @@
+nav:
+- Intro: README.md
+- children:
+- Passive Information Gathering: enumeration/passive-information-gathering.md
+- children:
+- Active Information Gathering: enumeration/active-information-gathering.md
+- children:
+- Ports: enumeration/ports/README.md
+- children:
+  - Nmap: enumeration/ports/nmap.md
+  - children:
+  - 21 - FTP: enumeration/ports/21-ftp.md
+  - children:
+  - 22 - SSH: enumeration/ports/ssh.md
+  - children:
+  - 23 - Telnet: enumeration/ports/23-telnet.md
+  - children:
+  - 25, 587 - SMTP: enumeration/ports/25-587-smtp.md
+  - children:
+  - 53 - DNS: enumeration/ports/dns.md
+  - children:
+  - 69 - TFTP (UDP): enumeration/ports/69-tftp-udp.md
+  - children:
+  - 79 - finger: enumeration/ports/79-finger.md
+  - children:
+  - 80 / 443 / 8080 - HTTP(S): enumeration/ports/80-443-8080-http-s.md
+  - children:
+  - 88 - Kerberos: enumeration/ports/88-kerberos.md
+  - children:
+  - 110, 995 - POP + POP (SSL): enumeration/ports/110-995-pop-+-pop-ssl.md
+  - children:
+  - 111 - RPC / PortMapper: enumeration/ports/111-rpc-portmapper.md
+  - children:
+  - 111, 2049 - NFS: enumeration/ports/111-2049-nfs.md
+  - children:
+  - 113 - ident: enumeration/ports/113-ident.md
+  - children:
+  - 119 - NNTP: enumeration/ports/119-nntp.md
+  - children:
+  - 135 - MSRPC: enumeration/ports/135-msrpc.md
+  - children:
+  - 139, 445 - SMB: enumeration/ports/smb.md
+  - children:
+  - 143 - IMAP: enumeration/ports/143-imap.md
+  - children:
+  - 161, 162 (UDP) - SNMP: enumeration/ports/161-162-udp-snmp.md
+  - children:
+  - 389, 636 - LDAP: enumeration/ports/389-636-ldap.md
+  - children:
+  - Page: enumeration/ports/page.md
+  - children:
+  - 873 - rsync: enumeration/ports/873-rsync.md
+  - children:
+  - 1050, 1098, 1099 - Java RMI: enumeration/ports/1050-1098-1099-java-rmi.md
+  - children:
+  - 1435 - MSSQL: enumeration/ports/1435-mssql.md
+  - children:
+  - 1978 Unisql: enumeration/ports/1978-unisql.md
+  - children:
+  - 2375 - Docker: enumeration/ports/2375-docker.md
+  - children:
+  - 3128 - Squid: enumeration/ports/3128-squid.md
+  - children:
+  - 3306 - MySQL: enumeration/ports/3306-mysql.md
+  - children:
+  - 3389 - RDP: enumeration/ports/3389-rdp.md
+  - children:
+  - 3690 - Subversion: enumeration/ports/3690-subversion.md
+  - children:
+  - 4369 - Erlang: enumeration/ports/4369-erlang.md
+  - children:
+  - 5555 - ADB: enumeration/ports/5555-adb.md
+  - children:
+  - 5800, 5801, 5900, 5901 - VNC: enumeration/ports/5800-5801-5900-5901-vnc.md
+  - children:
+  - 5432, 5435 - PostgreSQL: enumeration/ports/5432-5435-postgresql.md
+  - children:
+  - 5984, 6984 - CouchDB: enumeration/ports/5984-6984-couchdb.md
+  - children:
+  - 5985, 5986 - WinRM: enumeration/ports/5985-5986-winrm.md
+  - children:
+  - 6000 - X11: enumeration/ports/6000-x11.md
+  - children:
+  - 6379 - Redis: enumeration/ports/6379-redis.md
+  - children:
+  - 8089 - Splunk: enumeration/ports/8089-splunk.md
+  - children:
+  - 9200 - ElasticSearch: enumeration/ports/9200-elasticsearch.md
+  - children:
+  - 27017-19, 27080, 28017 - MongoDB: enumeration/ports/27017-19-27080-28017-mongodb.md
+  - children:
+  - Werkzeug: enumeration/ports/werkzeug.md
+  - children:
+  - IRC: enumeration/ports/irc.md
+  - children:
+  - 10000, 20000 - Webmin/Usermin: enumeration/ports/10000-20000-webmin-usermin.md
+  - children:
+  - IPMI (UDP): enumeration/ports/ipmi-udp.md
+  - children:
+- Web attacks: enumeration/web-pentesting/README.md
+- children:
+  - Tools: enumeration/web-pentesting/tools.md
+  - children:
+  - Fixing web exploits: enumeration/web-pentesting/fixing-web-exploits.md
+  - children:
+  - Fuzzing / Bruteforcing: enumeration/web-pentesting/fuzzing-bruteforcing.md
+  - children:
+  - SQL injection (SQLi): enumeration/web-pentesting/sql-injection-sqli/README.md
+  - children:
+    - MSSQL: enumeration/web-pentesting/sql-injection-sqli/mssql.md
+    - children:
+    - Scripts: enumeration/web-pentesting/sql-injection-sqli/scripts.md
+    - children:
+    - PostgreSQLi: enumeration/web-pentesting/sql-injection-sqli/postgresqli.md
+    - children:
+    - Sqlmap: enumeration/web-pentesting/sql-injection-sqli/sqlmap.md
+    - children:
+    - SQLite: enumeration/web-pentesting/sql-injection-sqli/sqlite.md
+    - children:
+    - Oracle - sqlplus: enumeration/web-pentesting/sql-injection-sqli/oracle-sqlplus.md
+    - children:
+    - NoSQLi: enumeration/web-pentesting/sql-injection-sqli/nosqli.md
+    - children:
+    - H2 Database (Java): enumeration/web-pentesting/sql-injection-sqli/h2-database-java.md
+    - children:
+  - Directory Traversal: enumeration/web-pentesting/directory-traversal.md
+  - children:
+  - LFI: enumeration/web-pentesting/lfi.md
+  - children:
+  - RFI: enumeration/web-pentesting/rfi.md
+  - children:
+  - File Upload: enumeration/web-pentesting/file-upload.md
+  - children:
+  - Authentication: enumeration/web-pentesting/authenticate.md
+  - children:
+  - Command Injection: enumeration/web-pentesting/command-injection.md
+  - children:
+  - XSS: enumeration/web-pentesting/xss.md
+  - children:
+  - XXE: enumeration/web-pentesting/xxe.md
+  - children:
+  - SSRF: enumeration/web-pentesting/ssrf.md
+  - children:
+  - SSTI: enumeration/web-pentesting/ssti.md
+  - children:
+  - API: enumeration/web-pentesting/api.md
+  - children:
+  - CSRF: enumeration/web-pentesting/csrf.md
+  - children:
+  - JWT: enumeration/web-pentesting/jwt.md
+  - children:
+  - IDOR: enumeration/web-pentesting/idor.md
+  - children:
+  - Type Juggling: enumeration/web-pentesting/type-juggling.md
+  - children:
+  - Padding Oracle: enumeration/web-pentesting/padding-oracle.md
+  - children:
+  - Deserialization: enumeration/web-pentesting/deserialization.md
+  - children:
+  - XPath: enumeration/web-pentesting/xpath.md
+  - children:
+  - Information Disclosure: enumeration/web-pentesting/information-disclosure.md
+  - children:
+  - Business Logic: enumeration/web-pentesting/business-logic.md
+  - children:
+  - CORS: enumeration/web-pentesting/cors.md
+  - children:
+  - Insecure deserialization: enumeration/web-pentesting/insecure-deserialization.md
+  - children:
+  - Prototype Pollution: enumeration/web-pentesting/prototype-pollution.md
+  - children:
+  - HTTP Request Smuggling: enumeration/web-pentesting/http-request-smuggling.md
+  - children:
+  - HTTP Host Header Attacks: enumeration/web-pentesting/http-host-header-attacks.md
+  - children:
+  - GraphQL API: enumeration/web-pentesting/graphql-api.md
+  - children:
+  - Access Control: enumeration/web-pentesting/access-control.md
+  - children:
+  - Clickjacking (UI Redressing): enumeration/web-pentesting/clickjacking-ui-redressing.md
+  - children:
+  - Race Conditions: enumeration/web-pentesting/race-conditions.md
+  - children:
+  - WebSocket: enumeration/web-pentesting/websocket.md
+  - children:
+  - Web Cache Deception: enumeration/web-pentesting/web-cache-deception.md
+  - children:
+  - SOAP: enumeration/web-pentesting/soap.md
+  - children:
+  - LLM / AI: enumeration/web-pentesting/llm-ai.md
+  - children:
+  - Others: enumeration/web-pentesting/others.md
+  - children:
+- Web Technologies: enumeration/web-technologies/README.md
+- children:
+  - Wordpress: enumeration/web-technologies/wordpress.md
+  - children:
+  - Tomcat: enumeration/web-technologies/tomcat.md
+  - children:
+  - Python: enumeration/web-technologies/python.md
+  - children:
+  - Jenkins: enumeration/web-technologies/jenkins.md
+  - children:
+  - Django: enumeration/web-technologies/django.md
+  - children:
+  - Java: enumeration/web-technologies/java.md
+  - children:
+  - Javascript: enumeration/web-technologies/javascript.md
+  - children:
+  - .NET: enumeration/web-technologies/.net.md
+  - children:
+  - H2 Database: enumeration/web-technologies/h2-database.md
+  - children:
+  - WebAssembly: enumeration/web-technologies/webassembly.md
+  - children:
+  - Git: enumeration/web-technologies/git.md
+  - children:
+  - Webdav: enumeration/web-technologies/webdav.md
+  - children:
+  - IIS: enumeration/web-technologies/iis.md
+  - children:
+  - Joomla: enumeration/web-technologies/joomla.md
+  - children:
+  - Drupal: enumeration/web-technologies/drupal.md
+  - children:
+  - Magento: enumeration/web-technologies/magento.md
+  - children:
+  - PHP: enumeration/web-technologies/php.md
+  - children:
+  - Ruby on Rails: enumeration/web-technologies/ruby-on-rails.md
+  - children:
+  - LUA/LSP: enumeration/web-technologies/lua-lsp.md
+  - children:
+  - Grafana: enumeration/web-technologies/grafana.md
+  - children:
+  - Laravel: enumeration/web-technologies/laravel.md
+  - children:
+  - GraphQL: enumeration/web-technologies/graphql.md
+  - children:
+  - NodeJS / Express: enumeration/web-technologies/nodejs-express.md
+  - children:
+- Other Technologies: enumeration/other-technologies/README.md
+- children:
+  - Docker: enumeration/other-technologies/docker.md
+  - children:
+  - AWS: enumeration/other-technologies/aws.md
+  - children:
+  - SQLite: enumeration/other-technologies/sqlite.md
+  - children:
+  - Ansible: enumeration/other-technologies/ansible.md
+  - children:
+  - Microsoft Office: enumeration/other-technologies/microsoft-office.md
+  - children:
+  - Inspect code / Debugger: enumeration/other-technologies/inspect-code-debugger.md
+  - children:
+  - Cloud: enumeration/other-technologies/cloud.md
+  - children:
+  - GLPI: enumeration/other-technologies/glpi.md
+  - children:
+- Password cracking: enumeration/passwords.md
+- children:
+- Packet sniffing: enumeration/packet-sniffing.md
+- children:
+- Shells: exploitation/shells.md
+- children:
+- File transfer: exploitation/file-transfer.md
+- children:
+- Client-side attacks: exploitation/client-side-attacks.md
+- children:
+- Buffer overflow: exploitation/buffer-overflow.md
+- children:
+- Windows: post-exploitation/windows/README.md
+- children:
+  - Commands: post-exploitation/windows/permissions.md
+  - children:
+  - Exploits: post-exploitation/windows/exploits.md
+  - children:
+  - AD: post-exploitation/windows/ad/README.md
+  - children:
+    - Mind Maps: post-exploitation/windows/ad/mind-maps.md
+    - children:
+    - Initial Access / Breaching: post-exploitation/windows/ad/initial-access-breaching.md
+    - children:
+    - Enumeration: post-exploitation/windows/ad/enumeration.md
+    - children:
+    - Authentication: post-exploitation/windows/ad/authentication.md
+    - children:
+    - Exploitation: post-exploitation/windows/ad/exploitation.md
+    - children:
+    - Persistence: post-exploitation/windows/ad/persistence.md
+    - children:
+    - Credential Harvesting: post-exploitation/windows/ad/credential-harvesting.md
+    - children:
+    - ACL: post-exploitation/windows/ad/acl.md
+    - children:
+    - ADCS (Active Directory Certificate Services): post-exploitation/windows/ad/adcs-active-directory-certificate-services.md
+    - children:
+    - Trusts: post-exploitation/windows/ad/trusts.md
+    - children:
+  - AV Evasion: post-exploitation/windows/av-evasion.md
+  - children:
+  - PS: post-exploitation/windows/powershell.md
+  - children:
+  - Persistence: post-exploitation/windows/persistence.md
+  - children:
+  - FW Evasion: post-exploitation/windows/fw-evasion.md
+  - children:
+  - UAC Bypass: post-exploitation/windows/uac-bypass.md
+  - children:
+- Linux: post-exploitation/linux/README.md
+- children:
+  - Commands: post-exploitation/linux/untitled.md
+  - children:
+  - SUID / groups / privesc: post-exploitation/linux/suid-groups-privesc.md
+  - children:
+  - Sudo exploitation & CVEs: post-exploitation/linux/sudo-exploitation-and-cves.md
+  - children:
+  - Persistence: post-exploitation/linux/persistence.md
+  - children:
+- Port Redirection and Tunneling: post-exploitation/port-redirection-and-tunneling.md
+- children:
+- Lateral Movement: post-exploitation/lateral-movement.md
+- children:
+- Data exfiltration: post-exploitation/data-exfiltration.md
+- children:
+- Reverse Engineering: misc/reverse-engineering.md
+- children:
+- Cryptography: misc/cryptography.md
+- children:
+- Scripting: misc/scripting.md
+- children:
+- Stego: misc/stego.md
+- children:
+- OSINT: misc/osint.md
+- children:
+- Blue Team: misc/blue-team.md
+- children:
+- 📱 Mobile Pentesting: misc/mobile-pentesting.md
+- children:
+- Malware Analysis: misc/malware-analysis.md
+- children:
+- Anti-forensics: misc/anti-forensics.md
+- children:
+- Curso s4vitar: misc/curso-s4vitar.md
+- children:
+- Red Teaming / C2: misc/red-teaming-c2.md
+- children:
+- Forensics / Incident Response: misc/forensics-incident-response.md
+- children:
+- DevOps: misc/devops.md
+- children:
+- Bug Bounty: misc/bug-bounty.md
+- children:
+- Road to OSCP: misc/master.md
+- children:
+- Burp Suite: tools/burp-suite.md
+- children:
+- NetExec: tools/netexec.md
+- children:
+- Metasploit: tools/metasploit.md
+- children:
+- C2 (Command & Control): tools/empire.md
+- children:
+- OWASP ZAP: tools/owasp-zap.md
+- children:
+- OverTheWire - Bandit: ctfs/bandit.md
+- children:
