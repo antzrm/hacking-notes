@@ -1,8 +1,8 @@
 site_name: Hacking
 site_description: 'My personal bible for Pentesting, Red Teaming and other Cyber Security fields.'
-site_url: https://antonioluc93.gitbook.io/
+site_url: https://antzrm.github.io/hacking-notes/ 
 
-repo_url: https://github.com/antzrm/My-GitBook
+repo_url: https://github.com/antzrm/hacking-notes
 edit_uri: blob/master/
 
 # copyright: © 2016 PATT
