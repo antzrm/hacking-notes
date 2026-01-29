@@ -11,8 +11,8 @@
 ???+ tip
     Try rockyou with **rules**, not only **best64** and **rockyou-30000** but also **d3ad0ne**.rule, T0XlC.rule, T0XlCv2.rule...
 
--  Great wordlists: [weakpass](#https://weakpass.com/), [packetstorm](#https://packetstormsecurity.com/Crackers/wordlists/)
--  Great rules: [pantagrule](#https://github.com/rarecoil/pantagrule), [OneRuleToRuleThemAll](#https://notsosecure.com/one-rule-to-rule-them-all/)
+-  Great wordlists: [weakpass](https://weakpass.com/), [packetstorm](https://packetstormsecurity.com/Crackers/wordlists/)
+-  Great rules: [pantagrule](https://github.com/rarecoil/pantagrule), [OneRuleToRuleThemAll](https://notsosecure.com/one-rule-to-rule-them-all/)
 
 ## Bruteforce
 

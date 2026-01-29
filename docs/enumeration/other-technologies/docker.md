@@ -231,4 +231,4 @@ Need to spin up a quick SQL server for a potential attack or pentest? Docker has
 
 docker run -p 3306:3306 -e MYSQL\_ROOT\_PASSWORD=anythingyouwant -d mysql
 
-![](<../../.gitbook/assets/image (122).png>)
+![](<../../assets/image (122).png>)

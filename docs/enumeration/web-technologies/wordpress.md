@@ -105,7 +105,7 @@ Once we sucessfully logged in > **Appearance → Theme editor → 404 Template**
 
 Change the content for a php shell:
 
-![](<../../.gitbook/assets/image (33).png>)
+![](<../../assets/image (33).png>)
 
 Now log out and go to `http(s)://$IP/$wordpress_path/?p=404.php`
 

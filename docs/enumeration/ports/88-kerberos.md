@@ -225,8 +225,8 @@ Kerberos is an authentication protocol based on tickets\. It basically works lik
 3\. Client uses the ST \(Service Ticket\) to access a service\. The client request to the service is called AP\-REQ, the service answer is called AP\-REP\.
 4\. Both tickets \(TGT and ST\) usually contain an encrypted PAC \(Privilege Authentication Certificate\), a set of information that the target service will read to decide if the authentication user can access the service or not \(user ID, group memberships and so on\)\.
 - A Service Ticket \(ST\) allows access to a specific service\.
-	- A TGT is encrypted with the krbtgtaccount NT hash\. An attacker knowing the krbtgt's NT hash can forge TGTs impersonating a domain admin\. He can then request STs as a domain admin for any service\. The attacker would have access to everything\. This forged TGT is called a [Golden ticket](#https://www.thehacker.recipes/ad/movement/kerberos/forged-tickets/golden)\.
-	- A ST is encrypted with the service account's NT hash\. An attacker knowing a service account's NT hash can use it to forge a Service ticket and obtain access to that service\. This forged Service ticket is called a [Silver ticket](#https://www.thehacker.recipes/ad/movement/kerberos/forged-tickets/silver)\.
+	- A TGT is encrypted with the krbtgtaccount NT hash\. An attacker knowing the krbtgt's NT hash can forge TGTs impersonating a domain admin\. He can then request STs as a domain admin for any service\. The attacker would have access to everything\. This forged TGT is called a [Golden ticket](https://www.thehacker.recipes/ad/movement/kerberos/forged-tickets/golden)\.
+	- A ST is encrypted with the service account's NT hash\. An attacker knowing a service account's NT hash can use it to forge a Service ticket and obtain access to that service\. This forged Service ticket is called a [Silver ticket](https://www.thehacker.recipes/ad/movement/kerberos/forged-tickets/silver)\.
 
 
 ### Create a ticket
@@ -248,7 +248,7 @@ klist
 
 > Pass the ticket works by dumping the TGT from the LSASS memory of the machine. The Local Security Authority Subsystem Service (LSASS) is a memory process that stores credentials on an active directory server and can store Kerberos ticket along with other credential types to act as the gatekeeper and accept or reject the credentials provided. You can dump the Kerberos Tickets from the LSASS memory just like you can dump hashes. When you dump the tickets with mimikatz it will give us a **.kirbi** ticket which can be used to gain domain admin if a domain admin ticket is in the LSASS memory. This attack is great for privilege escalation and lateral movement if there are unsecured domain service account tickets laying around. The attack allows you to escalate to domain admin if you dump a domain admin's ticket and then impersonate that ticket using **mimikatz PTT** attack allowing you to act as that domain admin. You can think of a pass the ticket attack like reusing an existing ticket were not creating or destroying any tickets here were simply reusing an existing ticket from another user on the domain and impersonating that ticket.
 
-![](<../../.gitbook/assets/image (130).png>)
+![](<../../assets/image (130).png>)
 
 ```powershell
 ##### GET A TICKET
@@ -297,7 +297,7 @@ sekurlsa::tickets /export # this will export all of the .kirbi tickets
 ```
 
 
-![](<../../.gitbook/assets/image (56).png>)
+![](<../../assets/image (56).png>)
 
 When looking for which ticket to impersonate I would recommend looking for an administrator ticket from the krbtgt just like the one outlined in red above.
 
@@ -537,7 +537,7 @@ ticketConverter.py $ticket.ccache $ticket.kirbi
 ```
 
 ### Sapphire ticket  
-> Sapphire tickets are similar to Diamond tickets in the way the ticket is not forged, but instead based on a legitimate one obtained after a request\. The difference lays in how the PAC is modified\. The Diamond ticket approach modifies the legitimate PAC to add some privileged groups \(or replace it with a fully\-forged one\)\. In the Sapphire ticket approach, the PAC of another powerful user is obtained through an [S4U2self+u2u](#https://www.thehacker.recipes/ad/movement/kerberos/#s4u2self-+-u2u)
+> Sapphire tickets are similar to Diamond tickets in the way the ticket is not forged, but instead based on a legitimate one obtained after a request\. The difference lays in how the PAC is modified\. The Diamond ticket approach modifies the legitimate PAC to add some privileged groups \(or replace it with a fully\-forged one\)\. In the Sapphire ticket approach, the PAC of another powerful user is obtained through an [S4U2self+u2u](https://www.thehacker.recipes/ad/movement/kerberos/#s4u2self-+-u2u)
 trick\. This PAC then replaces the one featured in the legitimate ticket\. The resulting ticket is an assembly of legitimate elements, and follows a standard ticket request, which makes it then most difficult silver/golden ticket variant to detect\.
 
 From UNIX-like systems, Impacket's ticketer (Python) script can be used for such purposes with the -impersonate argument.
@@ -864,14 +864,14 @@ In some cases, the delegation will not work. Depending on the context, the bronz
 The Bronze bit vulnerability (CVE-2020-17049) introduced the possibility of forwarding service tickets when it shouldn't normally be possible (protected users, unconstrained delegation, constrained delegation configured with protocol transition).
 ![](https://i.imgur.com/nbxyIGO.png)
 
-When abusing Kerberos delegations, S4U extensions usually come into play\. One of those extensions is S4U2proxy\. [Constrained](#https://www.thehacker.recipes/ad/movement/kerberos/delegations/constrained)
-and [Resource-Based Constrained](#https://www.thehacker.recipes/ad/movement/kerberos/delegations/rbcd)
+When abusing Kerberos delegations, S4U extensions usually come into play\. One of those extensions is S4U2proxy\. [Constrained](https://www.thehacker.recipes/ad/movement/kerberos/delegations/constrained)
+and [Resource-Based Constrained](https://www.thehacker.recipes/ad/movement/kerberos/delegations/rbcd)
 delegations rely on that extensions\. A requirement to be able to use  S4U2proxy is to use an additional service ticket as evidence \(usually  issued by after S4U2self request\)\. That ticket needs to have the forwardableflag set\. 
 
 There are a few reasons why that flag wouldn't be set on a ticket
 -  the "impersonated" user was member of the "Protected Users" group or was configured as "sensitive for delegation"
--  the service account configured for [constrained delegation](#https://www.thehacker.recipes/ad/movement/kerberos/delegations/constrained)
-was configured for [Kerberos only/without protocol transition](#https://www.thehacker.recipes/ad/movement/kerberos/delegations/constrained#without-protocol-transition)
+-  the service account configured for [constrained delegation](https://www.thehacker.recipes/ad/movement/kerberos/delegations/constrained)
+was configured for [Kerberos only/without protocol transition](https://www.thehacker.recipes/ad/movement/kerberos/delegations/constrained#without-protocol-transition)
 
 In 2020, the "bronze bit" \(CVE\-2020\-17049\) was released, allowing attackers to edit a ticket and set the forwardableflag\.
 ```powershell
@@ -991,9 +991,9 @@ noPac.exe -domain mcafeelab.local -user "lowpriv" -pass "lowpriv" /dc dc.domain.
 ```
 
 ### User account 
-An alternative to using computer accounts is to have enough permissions against a user account \(cf\. [Access Controls abuse](#https://www.thehacker.recipes/ad/movement/dacl/)\) to edit its sAMAccountNameattribute \(i\.e\. WritePropertyon the attribute, or on the « general information » or « public information » property sets, or GenericWrite, or GenericAll\)\.
+An alternative to using computer accounts is to have enough permissions against a user account \(cf\. [Access Controls abuse](https://www.thehacker.recipes/ad/movement/dacl/)\) to edit its sAMAccountNameattribute \(i\.e\. WritePropertyon the attribute, or on the « general information » or « public information » property sets, or GenericWrite, or GenericAll\)\.
 
-This  attack path also requires knowledge of the user account password or  hash \(to obtain a TGT\), which can be obtained \(or set\) in many ways  \(e\.g\. [Targeted Kerberoasting](#https://www.thehacker.recipes/ad/movement/dacl/targeted-kerberoasting), [Shadow Credentials](#https://www.thehacker.recipes/ad/movement/kerberos/shadow-credentials)
-, [Forced Password Change](#https://www.thehacker.recipes/ad/movement/dacl/forcechangepassword)\)\.
+This  attack path also requires knowledge of the user account password or  hash \(to obtain a TGT\), which can be obtained \(or set\) in many ways  \(e\.g\. [Targeted Kerberoasting](https://www.thehacker.recipes/ad/movement/dacl/targeted-kerberoasting), [Shadow Credentials](https://www.thehacker.recipes/ad/movement/kerberos/shadow-credentials)
+, [Forced Password Change](https://www.thehacker.recipes/ad/movement/dacl/forcechangepassword)\)\.
 
-Appart from the computer account creation and SPNs manipulation, the exploitation steps are the same as with a [machine account](#https://www.thehacker.recipes/ad/movement/kerberos/samaccountname-spoofing#machine-account)\. If the account has SPNs that point to its name, they will have to be removed for the renaming operation to work\.
+Appart from the computer account creation and SPNs manipulation, the exploitation steps are the same as with a [machine account](https://www.thehacker.recipes/ad/movement/kerberos/samaccountname-spoofing#machine-account)\. If the account has SPNs that point to its name, they will have to be removed for the renaming operation to work\.
