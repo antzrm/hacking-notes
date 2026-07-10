@@ -9,6 +9,61 @@ https://medium.com/mitre-engenuity/introducing-the-all-new-adversary-emulation-p
 https://cuckoosandbox.org/
 ```
 
+Good Blue Team courses
+- CCNA-CyberOps – Cisco Certified CyberOps Associate
+    - [CyberOps Associate](https://www.netacad.com/es/courses/cyberops-associate?courseLang=es-XL)
+- Security Blue Team
+    - [Blue Team Junior Analyst Pathway | Free Blue Team Training](https://www.securityblue.team/courses/blue-team-junior-analyst-pathway-bundle)
+    - [BTLO](https://blueteamlabs.online/home/challenges) 🡪 Laboratorios
+    - [Security Blue Team - eLearning Platform](https://elearning.securityblue.team/home/courses/free-courses)
+- [TryHackMe | SOC Level 1 Training](https://tryhackme.com/path/outline/soclevel1?ref=blog.tryhackme.com)
+- PaloAlto: [Cybersecurity Fundamentals - The Learning Center](https://learn.paloaltonetworks.com/learn/courses/229/cybersecurity-fundamentals)
+- [Palo Alto Networks Certified Cybersecurity Practitioner - The Learning Center](https://learn.paloaltonetworks.com/learn/learning-plans/339/palo-alto-networks-certified-cybersecurity-practitioner)
+- [Cortex XSOAR: Analyst Training (ver. 2020) - The Learning Center](https://learn.paloaltonetworks.com/learn/courses/2281/cortex-xsoar-analyst-training-ver-2020)
+- GIAC GCIH (Incident Handler)
+## Alert Triaging
+
+|   |   |   |
+|---|---|---|
+|**Key Factors**|**Description**|**Why It Matters?**|
+|Severity Level|Review the alert's severity rating, ranging from Informational to Critical.|Indicates the urgency of response and potential business risk.|
+|Timestamp and Frequency|Identify when the alert was triggered and check for related activity before and after that time.|Helps identify ongoing attacks or patterns of repeated behaviour.|
+|Attack Stage|Determine which stage of the attack lifecycle this alert indicates (reconnaissance, persistence, or data exfiltration).|It gives insight into how far the attacker may have progressed and their objective.|
+|Affected Asset|Identify the system, user, or resource involved and assess its importance to operations.|Prioritises response based on the asset's importance and the potential impact of compromise.|
+
+After reviewing these factors, decide on your next step: escalate to the incident response team, perform a deeper investigation, or close the alert if it's confirmed to be a false positive. A structured triage process like this helps ensure that time and resources are focused on what truly matters.
+## Diving Deeper into an Alert
+
+After identifying which alerts deserve further attention, it's time to dig into the details. Follow these steps to investigate and correlate effectively:
+
+- **Investigate the alert in detail.**  
+    Open the alert and review the entities, event data, and detection logic. Confirm whether the activity represents real malicious behaviour.  
+- **Check the related logs.**  
+    Examine the relevant log sources. Look for patterns or unusual actions that align with the alert.  
+- **Correlate multiple alerts.**  
+    Identify other alerts involving the same user, IP address, or device. Correlation often reveals a broader attack sequence or coordinated activity.  
+- **Build context and a timeline.**  
+    Combine timestamps, user actions, and affected assets to reconstruct the sequence of events. This helps determine if the attack is ongoing or has already been contained.  
+- **Decide on the following action.**  
+    If there are indicators of compromise, escalate to the incident response team. Investigate further if more evidence or correlation is needed. Close or suppress if the alert is a confirmed false positive, and update detection rules accordingly.  
+- **Document findings and lessons learned.**
+    Keep a clear record of the analysis, decisions, and remediation steps. Proper documentation strengthens SOC processes and supports continuous improvement.
+
+## Microsoft Sentinel
+- Logs > load a log
+- Threat Intelligence > Incidents > check them
+- Open incident > see events.
+Diving deeper into this, we can try checking the raw events from a single host through a custom query. To do this, let's change the view into an editable KQL query and find all the events triggered from **app-02**.
+
+1. Press the **Simple mode** dropdown from the upper-right corner and select KQL mode.
+2. Modify the query with the following KQL query below.  
+      
+    `set query_now = datetime(2025-10-30T05:09:25.9886229Z);`  
+    `Syslog_CL`  
+    `| where host_s == 'app-02'`  
+    `| project _timestamp_t, host_s, Message`
+
+
 
 ## Malware
 
@@ -118,97 +173,6 @@ Get-WinEvent  -Path <Path to Log> -FilterXPath '*/System/EventID=10 and  */Even
 Get-WinEvent  -Path <Path to Log> -FilterXPath '*/System/EventID=3 and  */EventData/Data[@Name="DestinationPort"] and */EventData/Data=4444'
 ```
 
-## Volatility
-
-At the time of writing, there are two versions of Volatility: [Volatility 2](https://github.com/volatilityfoundation/volatility), which is built using Python 2, and [Volatility 3](https://github.com/volatilityfoundation/volatility3), which uses Python 3. There are different use cases for each version, and depending on this, you might choose either one over the other. For example, Volatility 2 has been around for longer, so in some cases, it will have modules and plugins that have yet to be adapted to Volatility 3. For the purposes of this task, we're using Volatility 2.
-
-
-```bash
-https://downloads.volatilityfoundation.org/releases/2.4/CheatSheet_v2.4.pdf
-
-######### VOLATILITY 2 WAS USED FOR THESE EXAMPLES
-# Profiles (Linux profiles have to be manually created from the same device the memory dump is from)
-vol.py --info
-# To use a Linux profile, we have to copy it where Volatility stores the various profiles for Linux (~/.local/lib/python2.7/site-packages/volatility/plugins/overlays/linux/
-https://beguier.eu/nicolas/articles/security-tips-3-volatility-linux-profiles.html
-
-# Memory Analysis
-vol.py -f memorydump.mem --profile="LinuxUbuntu_5_4_0-163-generic_profilex64" -h
-
-############ PLUGINS
-# History file
-vol.py -f linux.mem --profile="LinuxUbuntu_5_4_0-163-generic_profilex64" linux_bash
-# Running processes
-vol.py -f linux.mem --profile="LinuxUbuntu_5_4_0-163-generic_profilex64" linux_pslist
-# Process Extraction (extract binary process by specifing its PID)
-mkdir extracted
-vol.py -f linux.mem --profile="LinuxUbuntu_5_4_0-163-generic_profilex64" linux_procdump -D extracted -p PID
-# File Extraction (in this case looking for cron files)
-vol.py -f linux.mem --profile="LinuxUbuntu_5_4_0-163-generic_profilex64" linux_enumerate_files | grep -i cron 
-# Extract specific file by indicating its inode value 0x...
-vol.py -f linux.mem --profile="LinuxUbuntu_5_4_0-163-generic_profilex64" linux_find_file -i $INODE -O extracted/elfie
-
-
-python2 /opt/Hacking/TOOLS/volatility/vol.py -f memdump.elf --profile="Win7SP1x64" -h
-# Check files included on the memory damp
-python2 /opt/Hacking/TOOLS/volatility/vol.py -f memdump.elf --profile="Win7SP1x64" filescan
-# Grep if a specific file is found (hex value id of every file is shown)
-python2 /opt/Hacking/TOOLS/volatility/vol.py -f memdump.elf --profile="Win2008R2SP1x64_23418" filescan | grep -i FILE
-# Dump a specific file by its hex id, we can rename it and dump it on the current directory)
-python2 /opt/Hacking/TOOLS/volatility/vol.py -f memdump.elf --profile="Win7SP0x64" dumpfiles -Q 0x000000001c7e8500 --name file2 -D .
-
-
-# List possible profiles
-volatility -f MEMORY_FILE.raw imageinfo
-
-# Test different profiles to find the good one / View active processes
-volatility -f MEMORY_FILE.raw --profile=PROFILE pslist
-
-# View active network connections 
-volatility -f MEMORY_FILE.raw --profile=PROFILE netscan
-
-# View intentionally hidden processes
-... psxview
-
-# Three columns will appear here in the middle, InLoad, InInit, InMem. If any of these are false, that module has likely been injected which is a really bad thing. 
-... ldrmodules
-
-# View unexpected patches in the standard system DLLs
-# If we see an instance where Hooking module: <unknown> that's really bad.
-... apihooks
-
-# Check code injection and extract it. We can upload them to Virustotal to see the malware (for example, Trojan/Win32.CRIDEX where Cridex is the malware)
-... malfind -D $DEST_PATH
-
-# list all of the DLLs in memory
-... dlllist
-
-# See/Pull DLLs out of the abnormal process (process PID, optional destination)
-volatility -f MEMORY_FILE.raw --profile=PROFILE --pid=PID dlldump (-D <Dest. Dir.>)
-
-#####################
-https://github.com/volatilityfoundation/volatility
-https://github.com/volatilityfoundation/volatility3 # Faster but fewer plugins
-# Installing Volatility 2
-git clone <https://github.com/volatilityfoundation/volatility.git> # If Python 2 isn't installed sudo apt install python2 # To Install Pip 2 curl <https://bootstrap.pypa.io/pip/2.7/get-pip.py> -o get-pip.py python2 get-pip.py # Installing distorm 3 and pycryptdome pip2 install distorm3 pycryptodome
-# Installing volatility 3
-git clone <https://github.com/volatilityfoundation/volatility3> # Installing pycryptodome pip3 install pycryptodome
-# Memory dump samples
-https://github.com/pinesol93/MemoryForensicSamples
-# Virtual Machine Files meaning
-https://docs.vmware.com/en/VMware-vSphere/7.0/com.vmware.vsphere.vm_admin.doc/GUID-CEFF6D89-8C19-4143-8C26-4B6D6734D2CB.html
-# VOLATILITY PLUGINS
-vol3 banners # symbols, know OS and kernel versions
-linux_bash # bash history
-netscan / linux_netstat # ports
-imageinfo # identify the profile (Win7SP1x64, Win2008R2SP0x64...)
-pstree # running processes
-strings file.vmem | grep # find some specific strings in memory dump
-editbox # which popped up for getting user credentials
-filescan # find files from the memory dump
-dumpfiles -u -r pst$ -D pst_files # dump all files that end on pst to a directory called pst_files, -r for regex purposes -u unsafe
-```
-
 
 ## Powershell - Hash files, strings, streams, hide connectors
 
@@ -268,3 +232,215 @@ In a previous challenge, you managed to view hidden content in folders via the c
 
 Back to VSS, to restore files to a previous version, simply right-click the folder and select `Properties` then select the `Previous Versions` tab.  Select which shadow copy you would like to restore and click the `Restore`button. Accept the confirmation to restore the shadow copy. Close the Properties window and drill into the folder to find the restore file(s).
 
+
+## YARA
+YARA is a tool built to identify and classify malware by searching for unique patterns, the digital fingerprints left behind by attackers. Imagine it as a detective’s notebook for cyber defenders: instead of dusting for prints, YARA scans code, files, and memory for subtle traces that reveal a threat’s identity.
+In what situations might defenders rely on this tool?
+
+- **Post-incident analysis**: when the security team needs to verify whether traces of malware found on one compromised host still exist elsewhere in the environment.
+- **Threat Hunting**: searching through systems and endpoints for signs of known or related malware families.
+- **Intelligence-based scans**: applying shared YARA rules from other defenders or kingdoms to detect new indicators of compromise.
+- **Memory analysis**: examining active processes in a memory dump for malicious code fragments.
+## YARA Rules
+A YARA rule is built from several key elements:
+
+- **Metadata**: information about the rule itself: who created it, when, and for what purpose.
+- **Strings**: the clues YARA searches for: text, byte sequences, or regular expressions that mark suspicious content.
+- **Conditions**: the logic that decides when the rule triggers, combining multiple strings or parameters into a single decision.
+
+Here’s how it looks in practice:
+
+```php
+rule TBFC_KingMalhare_Trace
+{
+    meta:
+        author = "Defender of SOC-mas"
+        description = "Detects traces of King Malhare’s malware"
+        date = "2025-10-10"
+    strings:
+        $s1 = "rundll32.exe" fullword ascii
+        $s2 = "msvcrt.dll" fullword wide
+        $url1 = /http:\/\/.*malhare.*/ nocase
+    condition:
+        any of them
+}
+```
+**Strings**
+
+As mentioned earlier, strings are the clues that YARA searches for when scanning files, memory, or other data sources.  
+They represent the signatures of malicious activity in fragments of text, bytes, or patterns that can reveal the presence of King Malhare's code. In YARA, there are three main types of strings, each with its own purpose. Let’s talk about them and see how they can help defend the kingdom of TBFC.  
+  
+**Text strings  
+**Text strings are the simplest and most common type used in YARA rules. They represent words or short text fragments that might appear in a file, script, or memory. By default, YARA treats text strings as ASCII and case-sensitive, but you can modify how they behave using special modifiers - small keywords added after the string definition. The example below shows a simple rule that searches for the word **Christmas** inside a file:
+
+```php
+rule TBFC_KingMalhare_Trace
+{
+    strings:
+        $TBFC_string = "Christmas"
+
+    condition:
+        $TBFC_string 
+}
+```
+
+Sometimes, attackers like King Malhare try to hide their code by changing how text looks inside a file - using encoding, case tricks, or even encryption. YARA helps defenders counter these obfuscation methods with a few powerful modifiers that extend the capabilities of text strings:
+
+- **Case-insensitive strings - nocase  
+    **By default, YARA matches text exactly as written. Adding the `nocase` modifier makes the match ignore letter casing, so "Christmas", "CHRISTMAS", or "christmas" will all trigger the same result.
+
+```php
+strings:
+    $xmas = "Christmas" nocase
+```
+
+- **Wide-character strings - wide, ascii**  
+    Many Windows executables use two-byte Unicode characters. Adding `wide` tells YARA to also look for this format, while `ascii` enforces a single-byte search. You can use both together:
+
+```php
+strings:
+    $xmas = "Christmas" wide ascii
+```
+
+- **XOR strings - xor  
+    **Malhare's agents often XOR-encode text to hide it from scanners. Using the `xor` modifier, YARA automatically checks all possible single-byte XOR variations of a string - revealing what attackers tried to conceal.
+
+```php
+strings:
+    $hidden = "Malhare" xor
+```
+
+- **Base64 strings - base64, base64wide**  
+    Some malware encodes payloads or commands in Base64. With these modifiers, YARA decodes the content and searches for the original pattern, even when it’s hidden in encoded form.
+
+```php
+strings:
+    $b64 = "SOC-mas" base64
+```
+
+Each of these modifiers makes your rule smarter and more resilient, ensuring that even when King Malhare disguises his code, the defenders of TBFC can still uncover the truth.  
+  
+**Hexadecimal strings  
+**Sometimes, King Malhare's code doesn't leave readable words behind; instead, it hides in raw bytes deep inside executables or memory. That's when hexadecimal strings come to the rescue. Hex strings allow YARA to search for specific byte patterns, written in hexadecimal notation. This is useful when defenders need to detect malware fragments like file headers, shellcode, or binary signatures that can't be represented as plain text.
+
+```php
+rule TBFC_Malhare_HexDetect
+{
+    strings:
+        $mz = { 4D 5A 90 00 }   // MZ header of a Windows executable
+        $hex_string = { E3 41 ?? C8 G? VB }
+
+    condition:
+        $mz and $hex_string
+}
+```
+
+**  
+Regular expression strings  
+**Not all traces of King Malhare's malware follow a fixed pattern. Sometimes, his code mutates, small changes in file names, URLs, or commands make it harder to detect using plain text or hex strings. That's where regular expressions come in. Regex allows defenders to write flexible search patterns that can match multiple variations of the same malicious string.  
+It's especially useful for spotting URLs, encoded commands, or filenames that share a structure but differ slightly each time.
+
+```php
+rule TBFC_Malhare_RegexDetect
+{
+    strings:
+        $url = /http:\/\/.*malhare.*/ nocase
+        $cmd = /powershell.*-enc\s+[A-Za-z0-9+/=]+/ nocase
+
+    condition:
+        $url and $cmd
+}
+```
+
+ Regex strings are powerful but should be used carefully; they can match a wide range of data and may slow down scans if written too broadly.
+
+**Conditions**
+
+Now that the defenders of TBFC know how to describe what to look for using strings, it's time to learn when YARA should decide that a threat has been found. That logic lives inside the condition section, the heart of every YARA rule. The condition tells YARA when the rule should trigger based on the results of all the string checks. Think of it as the final decision point, the moment when the system confirms: "Yes, this looks like King Malhare's code." Let's look at a few basic examples defenders use in their daily missions.  
+  
+**Match a single string**  
+The simplest condition, the rule triggers if one specific string is found. For example, the variable xmas.
+
+```php
+condition:
+    $xmas
+```
+
+**Match any string  
+**When multiple strings are defined, the rule can be configured to trigger as soon as any one of them is found:
+
+```php
+condition:
+    any of them
+```
+
+This approach is useful for detecting early signs of compromise; even a single matching clue can be enough to raise attention.  
+  
+**Match all strings  
+**To make the rule stricter, you can require that all defined strings appear together:
+
+```php
+condition:
+    all of them
+```
+
+This approach reduces false positives; YARA will only flag a file if every indicator matches.
+
+**Combine logic using: and, or, not  
+**Defenders often need more control over how rules behave. Logical operators let you combine multiple checks into one condition, just like building a small defensive strategy.
+
+```php
+condition:
+    ($s1 or $s2) and not $benign
+```
+
+This means the rule will trigger if either $s1 or $s2 is found, but not $benign. In other words: detect suspicious code, but ignore harmless system files.  
+  
+**Use comparisons like: filesize, entrypoint, or hash  
+**YARA can also check file properties, not just contents. For example, you can detect files that are unusually small or large, a common trick used by King Malhare to disguise his payloads.
+
+```php
+condition:
+    any of them and (filesize < 700KB)
+```
+## YARA Study Use Cases
+
+The evil kingdom of Malhare used a trojan known as IcedID to steal credentials from systems. McSkidy's analysts discovered that the malicious files spread across Wareville shared a common signature, the same MZ header found in executable malware used by the Dark Kingdom. These samples were small, lightweight loaders designed to infiltrate systems and later summon more dangerous payloads. Let's write our YARA rule.
+
+```php
+rule TBFC_Simple_MZ_Detect
+{
+    meta:
+        author = "TBFC SOC L2"
+        description = "IcedID Rule"
+        date = "2025-10-10"
+        confidence = "low"
+
+    strings:
+        $mz   = { 4D 5A }                        // "MZ" header (PE file)
+        $hex1 = { 48 8B ?? ?? 48 89 }            // malicious binary fragment
+        $s1   = "malhare" nocase                 // story / IOC string
+
+    condition:
+        all of them and filesize < 10485760     // < 10MB size
+}
+```
+
+Our analysts saved this to a file named **icedid_starter.yar** and executed it on one of the hosts. As a result, we can see that one file was detected.
+
+```php
+yara -r icedid_starter.yar C:\
+icedid_starter  C:\Users\WarevilleElf\AppData\Roaming\TBFC_Presents\malhare_gift_loader.exe
+```
+
+We can use the `man yara` command to find out what flags could be useful in our scenario, and we find the following:
+
+- `-r` - Allows YARA to scan directories recursively and follow symlinks
+- `-s` - Prints the strings found within files that match the rule
+
+## Practice
+- Search for the keyword `TBFC:` followed by an ASCII alphanumeric keyword
+`/TBFC:[A-Za-z0-9]+/`
+- Across the `/home/ubuntu/Downloads/easter`
+- Extract the message with `-s`
+`yara -s -r test.yar /home/ubuntu/Downloads/easter/`

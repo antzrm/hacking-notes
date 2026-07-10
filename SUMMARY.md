@@ -1,6 +1,6 @@
 # Table of contents
 
-* [Intro](README.md)
+* [Intro](mkdocs/hacking/README.md)
 
 ## Enumeration
 
@@ -75,7 +75,7 @@
   * [XXE](enumeration/web-pentesting/xxe.md)
   * [SSRF](enumeration/web-pentesting/ssrf.md)
   * [SSTI](enumeration/web-pentesting/ssti.md)
-  * [API](enumeration/web-pentesting/api.md)
+  * [API](mkdocs/hacking/docs/enumeration/web-pentesting/api/README.md)
   * [CSRF](enumeration/web-pentesting/csrf.md)
   * [JWT](enumeration/web-pentesting/jwt.md)
   * [IDOR](enumeration/web-pentesting/idor.md)
@@ -90,7 +90,7 @@
   * [Prototype Pollution](enumeration/web-pentesting/prototype-pollution.md)
   * [HTTP Request Smuggling](enumeration/web-pentesting/http-request-smuggling.md)
   * [HTTP Host Header Attacks](enumeration/web-pentesting/http-host-header-attacks.md)
-  * [GraphQL API](enumeration/web-pentesting/graphql-api.md)
+  * [GraphQL API](graphql-api.md)
   * [Access Control](enumeration/web-pentesting/access-control.md)
   * [Clickjacking (UI Redressing)](enumeration/web-pentesting/clickjacking-ui-redressing.md)
   * [Race Conditions](enumeration/web-pentesting/race-conditions.md)
@@ -125,12 +125,12 @@
   * [NodeJS / Express](enumeration/web-technologies/nodejs-express.md)
 * [Other Technologies](enumeration/other-technologies/README.md)
   * [Docker](enumeration/other-technologies/docker.md)
-  * [AWS](enumeration/other-technologies/aws.md)
+  * [AWS](AWS.md)
   * [SQLite](enumeration/other-technologies/sqlite.md)
   * [Ansible](enumeration/other-technologies/ansible.md)
   * [Microsoft Office](enumeration/other-technologies/microsoft-office.md)
   * [Inspect code / Debugger](enumeration/other-technologies/inspect-code-debugger.md)
-  * [Cloud](enumeration/other-technologies/cloud.md)
+  * [Cloud](mkdocs/hacking/docs/enumeration/other-technologies/cloud/README.md)
   * [GLPI](enumeration/other-technologies/glpi.md)
 * [Password cracking](enumeration/passwords.md)
 * [Packet sniffing](enumeration/packet-sniffing.md)
@@ -182,7 +182,7 @@
 * [Blue Team](misc/blue-team.md)
 * [📱 Mobile Pentesting](misc/mobile-pentesting.md)
 * [Malware Analysis](misc/malware-analysis.md)
-* [Anti-forensics](misc/anti-forensics.md)
+* [Anti-forensics](anti-forensics.md)
 * [Curso s4vitar](misc/curso-s4vitar.md)
 * [Red Teaming / C2](misc/red-teaming-c2.md)
 * [Forensics / Incident Response](misc/forensics-incident-response.md)

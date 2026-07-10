@@ -1,7 +1,5 @@
 # Password cracking
 
-
-
 ???+ tip
     For web applications, always consider as users both "admin" and otherwise also "user" if no clue.
 
@@ -11,8 +9,48 @@
 ???+ tip
     Try rockyou with **rules**, not only **best64** and **rockyou-30000** but also **d3ad0ne**.rule, T0XlC.rule, T0XlCv2.rule...
 
--  Great wordlists: [weakpass](https://weakpass.com/), [packetstorm](https://packetstormsecurity.com/Crackers/wordlists/)
+-  Great wordlists: [weakpass](https://weakpass.com/), [packetstorm](https://packetstormsecurity.com/Crackers/wordlists/) [https://github.com/stealthsploit/OneRuleToRuleThemStill](https://github.com/stealthsploit/OneRuleToRuleThemStill)
 -  Great rules: [pantagrule](https://github.com/rarecoil/pantagrule), [OneRuleToRuleThemAll](https://notsosecure.com/one-rule-to-rule-them-all/)
+
+
+- Start with a wordlist (fast wins). Common lists: `rockyou.txt`, `common-passwords.txt`.
+- If the wordlist fails, move to targeted wordlists (company names, project names, or data from the target).
+- If that fails, try mask or incremental attacks on short passwords (e.g. `?l?l?l?d?d` = three lowercase letters + two digits, which is used as a password mask format by password cracking tools).
+- Use GPU-accelerated cracking when possible; it dramatically speeds up attacks for some algorithms.
+- Keep an eye on resource use: cracking is CPU/GPU intensive. That behaviour can be detected on a monitored endpoint.
+
+
+rockyou → Rank C → 7.54% → 1m NTLM  
+hashmob medium → Rank S → 15.42% → 1m NTLM  
+kaonashi → Rank B → 23.79% → 5m NTLM  
+all-h → Rank 𝗦 → 38.50% → 𝟭𝟲𝗺 𝗡𝗧𝗟𝗠  
+all_in_one → Rank B → 41.40% → 2h 57m NTLM  
+  
+𝗣𝗿𝗶𝗺𝗲𝗿 𝗽𝗮𝘀𝗲 𝗿á𝗽𝗶𝗱𝗼 → 𝗵𝗮𝘀𝗵𝗺𝗼𝗯.𝗻𝗲𝘁_𝟮𝟬𝟮𝟱.𝗺𝗲𝗱𝗶𝘂𝗺  
+128 MB. El mismo tamaño que rockyou. Los mismos minutos.  
+El doble de crack rate. Rank S.  
+Antes de lanzar nada grande, siempre empiezo aquí.  
+  
+𝗘𝗳𝗶𝗰𝗶𝗲𝗻𝗰𝗶𝗮 𝗺á𝘅𝗶𝗺𝗮 → 𝗮𝗹𝗹-𝗵  
+Rank S. 38.50% en 𝟭𝟲 𝗺𝗶𝗻𝘂𝘁𝗼𝘀. 28 GB.  
+Contraseñas reales de [**Hashes.org**](https://www.linkedin.com/redir/redirect/?url=http%3A%2F%2FHashes%2Eorg&urlhash=Gha-&isSdui=true), Hashmob, Hashkiller, Hashpwn.  
+Por 2.9% menos que all_in_one, 11 veces más rápida.  
+  
+𝗖𝗼𝗯𝗲𝗿𝘁𝘂𝗿𝗮 𝗺á𝘅𝗶𝗺𝗮 → 𝗮𝗹𝗹_𝗶𝗻_𝗼𝗻𝗲  
+41.40%. Rank B. 317 GB. 3 horas.  
+Solo cuando tengo tiempo y necesito el máximo alcance.  
+  
+𝗞𝗲𝗿𝗯𝗲𝗿𝗼𝗮𝘀𝘁𝗶𝗻𝗴 → 𝗧𝗵𝗲-𝗩𝗶𝗽𝗲𝗿-𝗢𝗻𝗲  
+Cuentas de servicio, patrones distintos a usuarios normales.  
+Me ha sacado contraseñas en entornos reales que all-h no tocó.  
+  
+𝗘𝗻𝘁𝗼𝗿𝗻𝗼𝘀 𝗲𝗻 𝗲𝘀𝗽𝗮ñ𝗼𝗹 → 𝗖𝗦𝗟-𝗟𝗔𝗕𝗦 + 𝗵𝗮𝗰𝗸𝗶𝗻𝗴𝘆𝘀𝗲𝗴𝘂𝗿𝗶𝗱𝗮𝗱  
+Patrones locales que las listas genéricas no cubren.  
+  
+El workflow que uso:  
+1. hashmob.medium → 1 minuto → 15%  
+2. all-h → 16 minutos → 38.5%  
+3. all_in_one → 3 horas → 41.4% (solo si necesito más)
 
 ## Bruteforce
 

@@ -59,7 +59,10 @@ git push -u origin master # push changes to remote repository (master branch)
 
 
 ## Github, .git secrets
-
+```sh
+# Download .git
+wget -r -np -R "index.html*" http://target.com/.git/
+```
 GitGuardian Trufflehog Shhgit gitLeaks Gitrob
 
 ### GitTools

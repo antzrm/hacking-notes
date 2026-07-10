@@ -23,6 +23,23 @@ Backslash Powered Scanner
 
 Active Scan++
 
+Burp Extensions
+Some extensions worth checking out include, but are not limited to:
+
+| Tool                         | Extension                 | Burp                           |
+| ---------------------------- | ------------------------- | ------------------------------ |
+| .NET beautifier              | J2EEScan                  | Software Vulnerability Scanner |
+| Software Version Reporter    | Active Scan++             | Additional Scanner Checks      |
+| AWS Security Checks          | Backslash Powered Scanner | Wsdler                         |
+| Java Deserialization Scanner | C02                       | Cloud Storage Tester           |
+| CMS Scanner                  | Error Message Checks      | Detect Dynamic JS              |
+| Headers Analyzer             | HTML5 Auditor             | PHP Object Injection Check     |
+| JavaScript Security          | Retire.JS                 | CSP Auditor                    |
+| Random IP Address He         | Autorize                  | CSRF Scanner                   |
+| JS Link Finder               |                           |                                |
+
+Burp > preprocessing > With payload processing in Burp Intruder, first add the decoded cookie as a prefix to the payload, then encode the entire payload with the same encoding methods you identified earlier (in reverse order). 
+
 ## Strategy
 
 * Browse entire app, discover content
@@ -91,6 +108,9 @@ Attack types:
 2. **Battering ram**: The Battering ram attack type differs from Sniper in that it sends all payloads simultaneously, each payload inserted into its respective position. This attack type is useful when testing for race conditions or when payloads need to be sent concurrently.
 3. **Pitchfork**: The Pitchfork attack type enables the simultaneous testing of multiple positions with different payloads. It allows the tester to define multiple payload sets, each associated with a specific position in the request. Pitchfork attacks are effective when there are distinct parameters that need separate testing.
 4. **Cluster bomb**: The Cluster bomb attack type combines the Sniper and Pitchfork approaches. It performs a Sniper-like attack on each position but simultaneously tests all payloads from each set. This attack type is useful when multiple positions have different payloads, and we want to test them all together.
+
+???+ tip
+	In case you wanted to use a very large wordlist, it's best to use `Runtime file` as the Payload Type instead of `Simple List`, so that Burp Intruder won't have to load the entire wordlist in advance, which may throttle memory usage.
 
 
 ```bash

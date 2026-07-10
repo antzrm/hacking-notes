@@ -28,6 +28,9 @@ https://www.tarlogic.com/blog/how-to-attack-kerberos/
     
     and then we will have a prompt to input an empty password. DO IT LIKE THIS EVEN THOUGH WE DO NOT HAVE A KERBEROS TICKET. DO NOT USE A TICKET OR .CCACHE TO GET ONE WITH EMPTY PASSWORD, AND DO NOT INCLUDE -no-pass argument, IT WILL FAIL.
 
+## Password wordlist
+More suitable for real-world scenarios than rockyou https://gist.github.com/The-Viper-One/a1ee60d8b3607807cc387d794e809f0b
+
 ## Benefits
 
 
