@@ -7,12 +7,18 @@
 [https://www.hackthebox.com/blog/intro-cloud-pentesting](https://www.hackthebox.com/blog/intro-cloud-pentesting)
 
 ## Training Resources
-http://flaws.cloud/
-http://flaws2.cloud/
-https://github.com/RhinoSecurityLabs/cloudgoat
-https://cloudfoxable.bishopfox.com/
-https://github.com/ine-labs/AWSGoat
-https://github.com/ine-labs/AzureGoat
+
+[http://flaws.cloud/](http://flaws.cloud/)
+
+[http://flaws2.cloud/](http://flaws2.cloud/)
+
+[cloudgoat](https://github.com/RhinoSecurityLabs/cloudgoat)
+
+[https://cloudfoxable.bishopfox.com/](https://cloudfoxable.bishopfox.com/)
+
+[AWSGoat](https://github.com/ine-labs/AWSGoat)
+
+[AzureGoat](https://github.com/ine-labs/AzureGoat)
 
 **Tooling and Frameworks for Cloud Emulation**
 
@@ -112,7 +118,7 @@ aws sts get-caller-identity # the user is assumed-role/USERNAME/i-...
 
 ## The Cloud Infrastructure Kill Chain
 
-![](../../assets/image (15).png)
+![](../../../assets/image (15).png)
 
 A kill chain is useful to conceptualize and associate the steps that attackers might take in different phases of their operation.&#x20;
 

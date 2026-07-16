@@ -1,7 +1,7 @@
 [PRTG Network Monitor](https://www.paessler.com/prtg) is agentless network monitor software. It can be used to monitor bandwidth usage, uptime and collect statistics from various hosts, including routers, switches, servers, and more. Devices can also communicate with the tool via a REST API. The software runs entirely from an AJAX-based website, but there is a desktop application available for Windows, Linux, and macOS.
 
 Over the years, PRTG has suffered from [26 vulnerabilities](https://www.cvedetails.com/vulnerability-list/vendor_id-5034/product_id-35656/Paessler-Prtg-Network-Monitor.html) that were assigned CVEs. Of all of these, only four have easy-to-find public exploit PoCs, two cross-site scripting (XSS), one Denial of Service, and one authenticated command injection vulnerability.
-## Discovery/Footprinting/Enumeration
+## Enumeration
 Default credentials `prtgadmin:prtgadmin`. They are typically pre-filled on the login page, and we often find them unchanged. Vulnerability scanners such as Nessus also have [plugins](https://www.tenable.com/plugins/nessus/51874) that detect the presence of PRTG.
 
 Version can be obtained from `Nnmap` or using `cURL`:
@@ -9,7 +9,7 @@ Version can be obtained from `Nnmap` or using `cURL`:
 curl -s http://10.129.201.50:8080/index.htm -A "Mozilla/5.0 (compatible;  MSIE 7.01; Windows NT 5.0)" | grep version
 ```
 If default credentials fail, try simple passwords such as `prtgadmin:Password123`.
-## Leveraging Known Vulnerabilites
+## Known Vulnerabilites
 https://nvd.nist.gov/vuln/detail/CVE-2018-9276
 Command Injection Vulnerability [blog post](https://www.codewatch.org/blog/?p=453). When creating a new notification, the `Parameter` field is passed directly into a PowerShell script without any type of input sanitization.
 

@@ -1,12 +1,15 @@
-Lo primero y posiblemente más importante, cuando algo falla en Kubernetes, casi siempre cuesta depurar y hacerlo funcionar otra vez.  
+[https://swisskyrepo.github.io/InternalAllTheThings/containers/kubernetes/](https://swisskyrepo.github.io/InternalAllTheThings/containers/kubernetes/)
+
+First and foremost, when anything fails on Kubernetes, it is difficult to troubleshoot and make it work again.
   
-Por ese motivo, lo mejor es desplegar los objetos y configuraciones en un entorno separado y probar ahí.  
+That is why it is better to deploy objects and configurations in a separated environment and test there.
   
-Si haces pentesting sobre Kubernetes, ten claro que algún objeto o despliegue se puede quedar tocado, por eso siempre es mejor hacerlo sobre un entorno de pruebas.  
+If you perform Kubernetes pentesting, you should know some objects or deployments can be affected and that is why it is better to pentest on a staging/test environment.
   
-Problemas de seguridad comunes:
-❌ Permisos demasiado amplios sobre los objetos desplegados  
-❌ [**#RBAC**](https://www.linkedin.com/search/results/all/?keywords=%23rbac&origin=HASH_TAG_FROM_FEED) inexistente o poco estricto  
-❌ Crear objetos y despliegues con el usuario kubernetes-admin o similar  
-❌ No tener políticas de control de accesos en red sobre los [**#Deploys**](https://www.linkedin.com/search/results/all/?keywords=%23deploys&origin=HASH_TAG_FROM_FEED), [**#Services**](https://www.linkedin.com/search/results/all/?keywords=%23services&origin=HASH_TAG_FROM_FEED) y [**#Pods**](https://www.linkedin.com/search/results/all/?keywords=%23pods&origin=HASH_TAG_FROM_FEED)  
-❌ Permitir que los Pods se ejecuten con todos los permisos por defecto, sin restricciones de seguridad.
+Common security issues:
+
+❌ Too many permissions on deployed objects
+❌ Inexistent [**#RBAC**](https://www.linkedin.com/search/results/all/?keywords=%23rbac&origin=HASH_TAG_FROM_FEED)  or too loose
+❌ Create objects and deploys with kubernetes-admin user or similar  
+❌ Do not have network access control policies over [**#Deploys**](https://www.linkedin.com/search/results/all/?keywords=%23deploys&origin=HASH_TAG_FROM_FEED), [**#Services**](https://www.linkedin.com/search/results/all/?keywords=%23services&origin=HASH_TAG_FROM_FEED) y [**#Pods**](https://www.linkedin.com/search/results/all/?keywords=%23pods&origin=HASH_TAG_FROM_FEED)  
+❌ Allow pods can be executed with all permissions by default, without security restrictions.

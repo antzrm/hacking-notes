@@ -23,15 +23,17 @@ Like any web-facing technology, ColdFusion has historically been vulnerable to v
 
 ColdFusion exposes a fair few ports by default:
 
-|Port Number|Protocol|Description|
-|---|---|---|
-|80|HTTP|Used for non-secure HTTP communication between the web server and web browser.|
-|443|HTTPS|Used for secure HTTP communication between the web server and web browser. Encrypts the communication between the web server and web browser.|
-|1935|RPC|Used for client-server communication. Remote Procedure Call (RPC) protocol allows a program to request information from another program on a different network device.|
-|25|SMTP|Simple Mail Transfer Protocol (SMTP) is used for sending email messages.|
-|8500|SSL|Used for server communication via Secure Socket Layer (SSL).|
-|5500|Server Monitor|Used for remote administration of the ColdFusion server.|
+| Port Number | Protocol       | Description                                                                                                                                                            |
+| ----------- | -------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 80          | HTTP           | Used for non-secure HTTP communication between the web server and web browser.                                                                                         |
+| 443         | HTTPS          | Used for secure HTTP communication between the web server and web browser. Encrypts the communication between the web server and web browser.                          |
+| 1935        | RPC            | Used for client-server communication. Remote Procedure Call (RPC) protocol allows a program to request information from another program on a different network device. |
+| 25          | SMTP           | Simple Mail Transfer Protocol (SMTP) is used for sending email messages.                                                                                               |
+| 8500        | SSL            | Used for server communication via Secure Socket Layer (SSL).                                                                                                           |
+| 5500        | Server Monitor | Used for remote administration of the ColdFusion server.                                                                                                               |
+
 ### Enumeration
+
 | **Method**        | **Description**                                                                                                                                                 |
 | ----------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `Port Scanning`   | ColdFusion typically uses port 80 for HTTP and port 443 for HTTPS by default. Nmap might be able to identify ColdFusion during a services scan specifically.    |
@@ -39,6 +41,7 @@ ColdFusion exposes a fair few ports by default:
 | `HTTP Headers`    | Check the HTTP response headers of the web application. ColdFusion typically sets specific headers, such as "Server: ColdFusion" or "X-Powered-By: ColdFusion". |
 | `Error Messages`  | If the application uses ColdFusion and there are errors, the error messages may contain references to ColdFusion-specific tags or functions.                    |
 | `Default Files`   | ColdFusion creates several default files during installation, such as "admin.cfm" or "CFIDE/administrator/index.cfm".                                           |
+
 - `8500` is a default port that ColdFusion uses for SSL.
 - If we navigate to `IP:8500` and see 2 directories, `CFIDE` and `cfdocs,` in the root.
 - Navigating around the structure a bit shows lots of interesting info, from files with a clear `.cfm` extension to error messages and login pages.

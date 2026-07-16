@@ -21,7 +21,7 @@ eval("11 + 2 and __import__('os').sytem('whoami')")
 \"
 ```
 
-## Pitfalls&#x20;
+## Pitfalls
 
 [https://www.sonarsource.com/blog/10-unknown-security-pitfalls-for-python/](https://www.sonarsource.com/blog/10-unknown-security-pitfalls-for-python/)
 
@@ -46,10 +46,19 @@ ERROR write() argument must be str, not bytes
 write(str(argument))
 ```
 
-## Indentation errors in Python
+## Indentation errors
 
 ???+ tip
     SOLUTION: replace every tab for 4 spaces
+
+## **Find tab/identation problems**
+
+```python
+python -m tabnanny script.py
+
+https://pypi.org/project/autopep8/ 
+autopep8 script.py good-script.py
+```
 
 ## Issues with binaries/tools
 
@@ -57,8 +66,7 @@ Create **venv**, activate and then git clone repos and python setup install or p
 
 ## Compatibility / Virtual environment
 
-uv
-
+### uv
 ```bash
 https://github.com/astral-sh/uv
 https://www.youtube.com/watch?v=G36QXtBXKBQ
@@ -77,8 +85,7 @@ Updated `targetedKerberoast.py`
 oxdf@hacky$ uv run targetedKerberoast.py -v -d 'domain.com' -u $USER -p $PASS
 ```
 
-
-
+### venv
 ```bash
 https://www.kali.org/docs/general-use/using-eol-python-versions/
 https://peps.python.org/pep-0668/
@@ -106,15 +113,6 @@ root@kali:~/CTF/PWK# source ~/venv/python2/bin/activate
 (python2) root@kali:~# deactivate
 ```
 
-
-## **Find tab/identation problems**
-
-```python
-python -m tabnanny script.py
-
-https://pypi.org/project/autopep8/ 
-autopep8 script.py good-script.py
-```
 
 ## Open server locally
 

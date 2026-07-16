@@ -56,7 +56,7 @@ https://www.paterva.com/buy/maltego-clients.php
 
 [osint.md](../misc/osint.md)
 
-## Google Dorks / Google Fu
+## Google Dorking
 
 [https://www.blackhat.com/presentations/bh-europe-05/BH\_EU\_05-Long.pdf](https://www.blackhat.com/presentations/bh-europe-05/BH_EU_05-Long.pdf)
 

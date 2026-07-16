@@ -1,5 +1,5 @@
 ## Intro
-![[Pasted image 20260224173053.png]]
+![](../assets/image_155.png)
 ## Label Attacks
 ### Label Flipping
 `Label Flipping` is arguably the simplest form of a data poisoning attack. It directly targets the `ground truth information` used during model training.

@@ -35,14 +35,15 @@ curl -s "https://crt.sh/?q=facebook.com&output=json" | jq -r '.[] | select(.name
 
 ## Fingerprinting
 
-|Tool|Description|Features|
-|---|---|---|
-|`Wappalyzer`|Browser extension and online service for website technology profiling.|Identifies a wide range of web technologies, including CMSs, frameworks, analytics tools, and more.|
-|`BuiltWith`|Web technology profiler that provides detailed reports on a website's technology stack.|Offers both free and paid plans with varying levels of detail.|
-|`WhatWeb`|Command-line tool for website fingerprinting.|Uses a vast database of signatures to identify various web technologies.|
-|`Nmap`|Versatile network scanner that can be used for various reconnaissance tasks, including service and OS fingerprinting.|Can be used with scripts (NSE) to perform more specialised fingerprinting.|
-|`Netcraft`|Offers a range of web security services, including website fingerprinting and security reporting.|Provides detailed reports on a website's technology, hosting provider, and security posture.|
-|`wafw00f`|Command-line tool specifically designed for identifying Web Application Firewalls (WAFs).|Helps determine if a WAF is present and, if so, its type and configuration.|
+| Tool         | Description                                                                                                           | Features                                                                                            |
+| ------------ | --------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
+| `Wappalyzer` | Browser extension and online service for website technology profiling.                                                | Identifies a wide range of web technologies, including CMSs, frameworks, analytics tools, and more. |
+| `BuiltWith`  | Web technology profiler that provides detailed reports on a website's technology stack.                               | Offers both free and paid plans with varying levels of detail.                                      |
+| `WhatWeb`    | Command-line tool for website fingerprinting.                                                                         | Uses a vast database of signatures to identify various web technologies.                            |
+| `Nmap`       | Versatile network scanner that can be used for various reconnaissance tasks, including service and OS fingerprinting. | Can be used with scripts (NSE) to perform more specialised fingerprinting.                          |
+| `Netcraft`   | Offers a range of web security services, including website fingerprinting and security reporting.                     | Provides detailed reports on a website's technology, hosting provider, and security posture.        |
+| `wafw00f`    | Command-line tool specifically designed for identifying Web Application Firewalls (WAFs).                             | Helps determine if a WAF is present and, if so, its type and configuration.                         |
+
 ```sh
 wafw00f inlanefreight.com
 # -Tuning b flag tells `Nikto` to only run the Software Identification modules
@@ -62,6 +63,7 @@ nikto -h inlanefreight.com -Tuning b
 | `openid-configuration`         | Defines configuration details for OpenID Connect, an identity layer on top of the OAuth 2.0 protocol. | Permanent   | http://openid.net/specs/openid-connect-discovery-1_0.html                               |
 | `assetlinks.json`              | Used for verifying ownership of digital assets (e.g., apps) associated with a domain.                 | Permanent   | https://github.com/google/digitalassetlinks/blob/master/well-known/specification.md     |
 | `mta-sts.txt`                  | Specifies the policy for SMTP MTA Strict Transport Security (MTA-STS) to enhance email security.      |             |                                                                                         |
+
 ## Crawlers
 ```sh
 # Firs install Scrapy
@@ -75,29 +77,30 @@ python3 ReconSpider.py http://inlanefreight.com
 
 ## Search Engine Discovery
 
-|Operator|Operator Description|Example|Example Description|
-|:--|:--|:--|:--|
-|`site:`|Limits results to a specific website or domain.|`site:example.com`|Find all publicly accessible pages on example.com.|
-|`inurl:`|Finds pages with a specific term in the URL.|`inurl:login`|Search for login pages on any website.|
-|`filetype:`|Searches for files of a particular type.|`filetype:pdf`|Find downloadable PDF documents.|
-|`intitle:`|Finds pages with a specific term in the title.|`intitle:"confidential report"`|Look for documents titled "confidential report" or similar variations.|
-|`intext:` or `inbody:`|Searches for a term within the body text of pages.|`intext:"password reset"`|Identify webpages containing the term “password reset”.|
-|`cache:`|Displays the cached version of a webpage (if available).|`cache:example.com`|View the cached version of example.com to see its previous content.|
-|`link:`|Finds pages that link to a specific webpage.|`link:example.com`|Identify websites linking to example.com.|
-|`related:`|Finds websites related to a specific webpage.|`related:example.com`|Discover websites similar to example.com.|
-|`info:`|Provides a summary of information about a webpage.|`info:example.com`|Get basic details about example.com, such as its title and description.|
-|`define:`|Provides definitions of a word or phrase.|`define:phishing`|Get a definition of "phishing" from various sources.|
-|`numrange:`|Searches for numbers within a specific range.|`site:example.com numrange:1000-2000`|Find pages on example.com containing numbers between 1000 and 2000.|
-|`allintext:`|Finds pages containing all specified words in the body text.|`allintext:admin password reset`|Search for pages containing both "admin" and "password reset" in the body text.|
-|`allinurl:`|Finds pages containing all specified words in the URL.|`allinurl:admin panel`|Look for pages with "admin" and "panel" in the URL.|
-|`allintitle:`|Finds pages containing all specified words in the title.|`allintitle:confidential report 2023`|Search for pages with "confidential," "report," and "2023" in the title.|
-|`AND`|Narrows results by requiring all terms to be present.|`site:example.com AND (inurl:admin OR inurl:login)`|Find admin or login pages specifically on example.com.|
-|`OR`|Broadens results by including pages with any of the terms.|`"linux" OR "ubuntu" OR "debian"`|Search for webpages mentioning Linux, Ubuntu, or Debian.|
-|`NOT`|Excludes results containing the specified term.|`site:bank.com NOT inurl:login`|Find pages on bank.com excluding login pages.|
-|`*` (wildcard)|Represents any character or word.|`site:socialnetwork.com filetype:pdf user* manual`|Search for user manuals (user guide, user handbook) in PDF format on socialnetwork.com.|
-|`..` (range search)|Finds results within a specified numerical range.|`site:ecommerce.com "price" 100..500`|Look for products priced between 100 and 500 on an e-commerce website.|
-|`" "` (quotation marks)|Searches for exact phrases.|`"information security policy"`|Find documents mentioning the exact phrase "information security policy".|
-|`-` (minus sign)|Excludes terms from the search results.|`site:news.com -inurl:sports`|Search for news articles on news.com excluding sports-related content.|
+| Operator                | Operator Description                                         | Example                                             | Example Description                                                                     |
+| :---------------------- | :----------------------------------------------------------- | :-------------------------------------------------- | :-------------------------------------------------------------------------------------- |
+| `site:`                 | Limits results to a specific website or domain.              | `site:example.com`                                  | Find all publicly accessible pages on example.com.                                      |
+| `inurl:`                | Finds pages with a specific term in the URL.                 | `inurl:login`                                       | Search for login pages on any website.                                                  |
+| `filetype:`             | Searches for files of a particular type.                     | `filetype:pdf`                                      | Find downloadable PDF documents.                                                        |
+| `intitle:`              | Finds pages with a specific term in the title.               | `intitle:"confidential report"`                     | Look for documents titled "confidential report" or similar variations.                  |
+| `intext:` or `inbody:`  | Searches for a term within the body text of pages.           | `intext:"password reset"`                           | Identify webpages containing the term “password reset”.                                 |
+| `cache:`                | Displays the cached version of a webpage (if available).     | `cache:example.com`                                 | View the cached version of example.com to see its previous content.                     |
+| `link:`                 | Finds pages that link to a specific webpage.                 | `link:example.com`                                  | Identify websites linking to example.com.                                               |
+| `related:`              | Finds websites related to a specific webpage.                | `related:example.com`                               | Discover websites similar to example.com.                                               |
+| `info:`                 | Provides a summary of information about a webpage.           | `info:example.com`                                  | Get basic details about example.com, such as its title and description.                 |
+| `define:`               | Provides definitions of a word or phrase.                    | `define:phishing`                                   | Get a definition of "phishing" from various sources.                                    |
+| `numrange:`             | Searches for numbers within a specific range.                | `site:example.com numrange:1000-2000`               | Find pages on example.com containing numbers between 1000 and 2000.                     |
+| `allintext:`            | Finds pages containing all specified words in the body text. | `allintext:admin password reset`                    | Search for pages containing both "admin" and "password reset" in the body text.         |
+| `allinurl:`             | Finds pages containing all specified words in the URL.       | `allinurl:admin panel`                              | Look for pages with "admin" and "panel" in the URL.                                     |
+| `allintitle:`           | Finds pages containing all specified words in the title.     | `allintitle:confidential report 2023`               | Search for pages with "confidential," "report," and "2023" in the title.                |
+| `AND`                   | Narrows results by requiring all terms to be present.        | `site:example.com AND (inurl:admin OR inurl:login)` | Find admin or login pages specifically on example.com.                                  |
+| `OR`                    | Broadens results by including pages with any of the terms.   | `"linux" OR "ubuntu" OR "debian"`                   | Search for webpages mentioning Linux, Ubuntu, or Debian.                                |
+| `NOT`                   | Excludes results containing the specified term.              | `site:bank.com NOT inurl:login`                     | Find pages on bank.com excluding login pages.                                           |
+| `*` (wildcard)          | Represents any character or word.                            | `site:socialnetwork.com filetype:pdf user* manual`  | Search for user manuals (user guide, user handbook) in PDF format on socialnetwork.com. |
+| `..` (range search)     | Finds results within a specified numerical range.            | `site:ecommerce.com "price" 100..500`               | Look for products priced between 100 and 500 on an e-commerce website.                  |
+| `" "` (quotation marks) | Searches for exact phrases.                                  | `"information security policy"`                     | Find documents mentioning the exact phrase "information security policy".               |
+| `-` (minus sign)        | Excludes terms from the search results.                      | `site:news.com -inurl:sports`                       | Search for news articles on news.com excluding sports-related content.                  |
+
 - Finding Login Pages:
     - `site:example.com inurl:login`
     - `site:example.com (inurl:login OR inurl:admin)`
@@ -282,20 +285,16 @@ Reverse image searching can help not only identify where an image was taken, but
 Finally, breached data can be incredibly useful from an investigative standpoint. Breach data does not just include passwords. It often has full names, addresses, IP information, password hashes, and more. We can often use this information to tie to other accounts. For example, say we find an account with the email of v3ry1337h4ck3r@gmail.com. If we search that email for breached data, we might find a password or hash associated with it. If unique enough, we can search that password or hash in a breach database and use it to identify other possible accounts. We can do the same with usernames, IPs, names, etc. The possibilities are vast and one email address can lead to a slew of information.\
 Websites such as [https://haveibeenpwned.com/](https://haveibeenpwned.com/) will help identify if an account has ever been breached and will, at a minimum, inform us if an account existed at one point. However, it does not provide any password information. Free sites such as [http://scylla.sh/](http://scylla.sh/) will provide password information and are easy to search through. The data on free sites can tend to be older and not up to date with the latest breach information, but these sites are still a powerful resource. Lastly, paid sites such as [https://dehashed.com/](https://dehashed.com/) offer up to date information and are easily searchable at affordable rates.
 
+## Tools
 
-
------
-
-
-1. **SpiderFoot:** Una herramienta gráfica y de terminal para obtener datos de **OSINT** (inteligencia de fuentes abiertas). Nos ayuda a extraer información de dominios, empresas y personas, aunque debemos filtrar bien los resultados para evitar caer en falsos positivos.
+1. **SpiderFoot:** GUI or CLI tool to get **OSINT** data (domains, companies, people). We should filter out the good results to avoid false positives.
     
-2. **Maltego:** Es ideal para construir mapas visuales de relaciones entre datos recopilados, como nombres de dominio, IPs, emails, etc. ¡Perfecto para entender conexiones complejas!
+2. **Maltego:** ideal to build mindmaps and relations between gathered evidences, such as domain names, IPs, emails, etc. Perfect tool to understand complex connections!
     
-3. **The Harvester:** Útil para buscar subdominios y direcciones de correo electrónico relacionadas con un dominio.
+3. **The Harvester:** useful to look for subdomains and email addresses related to a domain.dominio.
     
+It is important to understand which each tool does. That makes the difference between a junior (running commands without knowing what happens behind the scenes) and a senior (understands what is happening in the background and can adapt their analysis).
 
-Es importante que sepamos qué hace cada herramienta y cómo funciona en su núcleo. Esto marca la diferencia entre un perfil junior (que ejecuta comandos sin saber qué ocurre) y un perfil senior (que entiende lo que pasa en segundo plano y puede adaptar sus análisis).
+## Practical example: active or passive?
 
-### Ejemplo práctico: ¿activo o pasivo?
-
-Una anécdota compartida en clase nos ilustra por qué hay que tener cuidado al usar herramientas como **SpiderFoot**. Esta aplicación tiene un modo activo y otro pasivo. El modo activo interactúa directamente con los sistemas objetivo, dejando rastro en los registros (logs) del servidor, mientras que el pasivo recopila datos sin esa interacción directa. Durante una auditoría de un servicio de salud, un pequeño error al no seleccionar el modo correcto hizo que algunos servidores se vieran afectados. Por eso, **es fundamental revisar siempre las configuraciones antes de ejecutar cualquier herramienta**.
+**SpiderFoot** has both modes **active** and **passive**. Active mode interacts directly with the target, leaving logs, while passive gathers data without direct interaction. During an audit to the health service, a little mistake by selecting active mode made some servers were affected. That is why it is **fundamental to always review configurations before running any tool**.

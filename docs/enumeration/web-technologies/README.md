@@ -2,7 +2,8 @@
 
 ## CMS
 
-**OPSEC Note:** You don’t need to actually publish any changes in most CMS systems to get your execution. If there’s a preview option, it will show the code to just you, and still run it. Then, you can leave the post and not publish, leaving less evidence behind.
+???+ OPSEC Note
+	You don’t need to actually publish any changes in most CMS systems to get your execution. If there’s a preview option, it will show the code to just you, and still run it. Then, you can leave the post and not publish, leaving less evidence behind.
 
 ### Wordlists
 

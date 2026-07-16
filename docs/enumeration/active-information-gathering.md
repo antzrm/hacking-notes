@@ -93,4 +93,4 @@ COMMAND  ==> wfuzz -c -w /usr/share/seclists//usr/share/seclists/Discovery/DNS -
 ```
 
 
-[dns.md](ports/dns.md)
+[dns.md](53-DNS.md)

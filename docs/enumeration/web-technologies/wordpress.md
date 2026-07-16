@@ -338,4 +338,6 @@ hashcat -m 400 hashes rockyou.txt
 [https://shift8web.ca/2018/01/craft-xss-payload-create-admin-user-in-wordpress-user/](https://shift8web.ca/2018/01/craft-xss-payload-create-admin-user-in-wordpress-user/)
 
 ## General note about CMS
-Do not try only to upload shell.php but a folder with shell.php inside (it is the understanding of a plugin, a directory with files).
+
+???+ tip
+	Do not try only to upload shell.php but a folder with shell.php inside (it is the understanding of a plugin, a directory with files).

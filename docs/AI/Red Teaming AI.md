@@ -1,7 +1,8 @@
 ## Red Teaming ML
-![[Pasted image 20260212134328.png]]
+![](../assets/image_157.png)
+
 ### ML OWASP Top 10
-https://owasp.org/www-project-machine-learning-security-top-10/
+[https://owasp.org/www-project-machine-learning-security-top-10/](https://owasp.org/www-project-machine-learning-security-top-10/)
 ### Manipulating the Model
 We will explore how an ML model reacts to changes in input data and training data to better understand how vulnerabilities related to data manipulation arise. These include input manipulation attacks (ML01) and data poisoning attacks (ML02).
 #### Manipulating the Input
@@ -29,7 +30,8 @@ Example: add Loen Ipsum after a spam message.
 We forced the classifier to misclassify a particular input message by manipulating the training data set. We achieved this without a substantial adverse effect on model accuracy, which is why data poisoning attacks are both powerful and hard to detect.
 ## Generative AI
 ### LLM OWASP Top 10
-https://owasp.org/www-project-top-10-for-large-language-model-applications/
+[https://owasp.org/www-project-top-10-for-large-language-model-applications/](https://owasp.org/www-project-top-10-for-large-language-model-applications/)
+
 | ID    | Description                                                                                                                                                                                   |
 | ----- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | LLM01 | `Prompt Injection`: Attackers manipulate the LLM's input directly or indirectly to cause malicious or illegal behaviour.                                                                      |
@@ -42,6 +44,7 @@ https://owasp.org/www-project-top-10-for-large-language-model-applications/
 | LLM08 | `Vector and Embedding Weaknesses`: Attackers exploit vulnerabilities related to the handling or storage of vectors and embeddings in `Retrieval-Augmented Generation (RAG)` LLM applications. |
 | LLM09 | `Misinformation`: LLM-generated responses contain misinformation, potentially resulting in security issues.                                                                                   |
 | LLM10 | `Unbounded Consumption`: Attackers feed inputs to the LLM that result in high resource consumption, potentially causing disruptions to the LLM service or high costs.                         |
+
 ### Google's Secure AI Framework (SAIF)
 [Google's Secure AI Framework (SAIF)](https://saif.google/)
 [SAIF Areas and Components](https://saif.google/secure-ai-framework/components)

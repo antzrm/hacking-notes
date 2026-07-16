@@ -1,4 +1,6 @@
-# ASP.NET Core Architecture
+# ASP.NET
 
-![[Pasted image 20250915201017.png]]
+## ASP.NET Core Architecture
+
+![](../../assets/image_187.png)
 

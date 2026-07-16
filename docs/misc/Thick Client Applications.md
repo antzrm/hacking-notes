@@ -30,6 +30,7 @@ Identify app architecture, programming languages and frameworks that have been u
 |||||
 |---|---|---|---|
 |[CFF Explorer](https://ntcore.com/?page_id=388)|[Detect It Easy](https://github.com/horsicq/Detect-It-Easy)|[Process Monitor](https://learn.microsoft.com/en-us/sysinternals/downloads/procmon)|[Strings](https://learn.microsoft.com/en-us/sysinternals/downloads/strings)|
+
 ### Client Side Attacks
 Although thick clients perform significant processing and data storage on the client side, they still communicate with servers for various tasks, such as data synchronization or accessing shared resources. This interaction with servers and other external systems can expose thick clients to vulnerabilities similar to those found in web applications, including command injection, weak access control, and SQL injection.
 
@@ -39,10 +40,13 @@ Sensitive information like usernames and passwords, tokens, or strings for commu
 |---|---|---|---|
 |[Ghidra](https://www.ghidra-sre.org/)|[IDA](https://hex-rays.com/ida-pro/)|[OllyDbg](http://www.ollydbg.de/)|[Radare2](https://www.radare.org/r/index.html)|
 |[dnSpy](https://github.com/dnSpy/dnSpy)|[x64dbg](https://x64dbg.com/)|[JADX](https://github.com/skylot/jadx)|[Frida](https://frida.re/)|
+
 ### Network Side Attacks
+
 |||||
 |---|---|---|---|
 |[Wireshark](https://www.wireshark.org/)|[tcpdump](https://www.tcpdump.org/)|[TCPView](https://learn.microsoft.com/en-us/sysinternals/downloads/tcpview)|[Burp Suite](https://portswigger.net/burp)|
+
 ### Server Side Attacks
 Server-side attacks in thick client applications are similar to web application attacks, and penetration testers should pay attention to the most common ones including most of the OWASP Top Ten.
 ## Retrieving Hardcoded Credentials

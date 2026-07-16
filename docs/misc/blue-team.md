@@ -9,17 +9,28 @@ https://medium.com/mitre-engenuity/introducing-the-all-new-adversary-emulation-p
 https://cuckoosandbox.org/
 ```
 
-Good Blue Team courses
+## Courses
+
 - CCNA-CyberOps – Cisco Certified CyberOps Associate
+
     - [CyberOps Associate](https://www.netacad.com/es/courses/cyberops-associate?courseLang=es-XL)
+	
 - Security Blue Team
+
     - [Blue Team Junior Analyst Pathway | Free Blue Team Training](https://www.securityblue.team/courses/blue-team-junior-analyst-pathway-bundle)
+	
     - [BTLO](https://blueteamlabs.online/home/challenges) 🡪 Laboratorios
+	
     - [Security Blue Team - eLearning Platform](https://elearning.securityblue.team/home/courses/free-courses)
+	
 - [TryHackMe | SOC Level 1 Training](https://tryhackme.com/path/outline/soclevel1?ref=blog.tryhackme.com)
+
 - PaloAlto: [Cybersecurity Fundamentals - The Learning Center](https://learn.paloaltonetworks.com/learn/courses/229/cybersecurity-fundamentals)
+
 - [Palo Alto Networks Certified Cybersecurity Practitioner - The Learning Center](https://learn.paloaltonetworks.com/learn/learning-plans/339/palo-alto-networks-certified-cybersecurity-practitioner)
+
 - [Cortex XSOAR: Analyst Training (ver. 2020) - The Learning Center](https://learn.paloaltonetworks.com/learn/courses/2281/cortex-xsoar-analyst-training-ver-2020)
+
 - GIAC GCIH (Incident Handler)
 ## Alert Triaging
 
@@ -174,7 +185,7 @@ Get-WinEvent  -Path <Path to Log> -FilterXPath '*/System/EventID=3 and  */EventD
 ```
 
 
-## Powershell - Hash files, strings, streams, hide connectors
+## PS (hash files, strings, streams)
 
 
 ```

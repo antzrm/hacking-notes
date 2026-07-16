@@ -47,17 +47,19 @@ The automated scan performs both passive and automated scans to build a sitemap 
 
 On the next page you may see the options to select either to use “traditional spider” or “Ajax spider”.
 
-A traditional spider scan is a passive scan that enumerates links and directories of the website. It builds a website index without brute-forcing. This is much quieter than a brute-force attack and can still net a login page or other juicy details, but is not as comprehensive as a bruteforce.\
-The Ajax Spider is an add-on that integrates in ZAP a crawler of AJAX rich sites called Crawljax. You can use it in conjunction with the traditional spider for better results. It uses your web browser and proxy.\
+A traditional spider scan is a passive scan that enumerates links and directories of the website. It builds a website index without brute-forcing. This is much quieter than a brute-force attack and can still net a login page or other juicy details, but is not as comprehensive as a bruteforce.
+
+The Ajax Spider is an add-on that integrates in ZAP a crawler of AJAX rich sites called Crawljax. You can use it in conjunction with the traditional spider for better results. It uses your web browser and proxy.
+
 The easiest way to use the Ajax Spider is with HTMLUnit.&#x20;
 
 To install HTML Unit use the command
 
-sudo apt install libjenkins-htmlunit-core-js-java
+`sudo apt install libjenkins-htmlunit-core-js-java`
 
-And then select HtmlUnity from the Ajax Spider Dropdown.&#x20;
+And then select HtmlUnity from the Ajax Spider Dropdown.
 
-&#x20;Both utilities can further be configured in the options menu (Ctrl+Alt+O)\
+Both utilities can further be configured in the options menu (Ctrl+Alt+O)
 
 
 Example Automated Scan Output:![](https://lh5.googleusercontent.com/rmYUE3qmjalywZ1gDsYhXtmOlJ5T8ei4OXXV2_0KhK7VPODDLtAoT-c9uBG-CC24Ivf1JkEYsF2irOJClEBqBPxzsdOX2r_ZUnf4i2ed5UZ5Qpl872IENhxcWRVhivehiJb4mV-B)
@@ -68,12 +70,9 @@ With very minimal setup we were able to do an automated scan that gave us a site
 
 Lets perform a manual scan against the DVWA machine.
 
-Like Burp, you should set-up your proxy between OWASP ZAP and your Browser. We’ll be using Firefox.&#x20;
+Like Burp, you should set-up your proxy between OWASP ZAP and your Browser. We’ll be using Firefox.
 
-\=============================================================\
-
-
-**OWASP Proxy Setup:**
+### OWASP Proxy Setup
 
 ![](https://lh3.googleusercontent.com/BH2dFPdblAa8hB6pAFlWFog8zqwcrG5OcDrJuheExNR9acufgMU5a8GYlagfTCUS4elqznDldO1OBLCPd0ty4AiSkuetyouugh5ak1-N_BTzHdU79IZbHhjPUM6HUUe-pQQpL-9T)
 
@@ -81,45 +80,37 @@ Open Options
 
 ![](https://lh6.googleusercontent.com/AVtxM1-JnYBlppNSVYArxS7kv58cpKdDkvu1XH9Jm2KtUrPiNFscqG-YpqDPOvYFoEiNiQYnjnV3TwbyHyn6nO5iULoPG1xWdO8_l66bpWVUGtJPqdumLhGPlMIKnH7GxLLhRrai)
 
-Change Local Proxy settings to the above.&#x20;
+Change Local Proxy settings to the above.
 
-\=============================================================\
+### Add ZAP Certificates
 
-
-**Add ZAP Certificates:**\
-
-
-Without importing ZAP Certificates, ZAP is unable to handle simultaneous Web request forwarding and intercepting. Do not skip this step.&#x20;
+Without importing ZAP Certificates, ZAP is unable to handle simultaneous Web request forwarding and intercepting. Do not skip this step.
 
 ![](https://lh3.googleusercontent.com/4gzHAeodZOBlXVPjtaDgU5v14E2hVzhRK_suUqvUagGI4isvVALgYLVmc4z6PaRCrwLfIo-aIjbzXQcbTs0tMpYFQAtIA5n4fjMaA6REuLmDtuienaG2XTkzD1gBcblw0CiTnwtp)
 
-&#x20;In the same options menu, navigate to Dynamic SSL Certificates and save the certificate somewhere you’ll remember and not delete.
+In the same options menu, navigate to Dynamic SSL Certificates and save the certificate somewhere you’ll remember and not delete.
 
 ![](https://lh4.googleusercontent.com/j66KrFbvPyCtd7rpMuZeUj04nWWHcW-f5_kKfhjXHkm19BF8fCw3-A_uRrCNcc0bWJnkKhmSN-TUKUAHS4yHL21DIjcWavnihzSg2MgWptEPb41O6Ltgt1PH7tBdvZJEUtNdt6Y-)
 
-&#x20;Then, open Firefox, navigate to your preferences, and search for certificates and click “View Certificates”&#x20;
+Then, open Firefox, navigate to your preferences, and search for certificates and click "View Certificates"
 
 ![](https://lh4.googleusercontent.com/qzOOB_XWTvZfRfuDaPz5_xmyzV-CGjXKP9G-uk-p3wV3z0DkRInfLgfo4hgoAm9ioo6h2zcI4DT6bBHrQYdCzqM2boUqBDdtpwPXUsGICC8qdCSGyX_OPD9VfUJC18-I6_mVVPtT)
 
-&#x20;Then click “Import” and then navigate to the earlier downloaded certificate and open it.&#x20;
+Then click “Import” and then navigate to the earlier downloaded certificate and open it.
 
 ![](https://lh5.googleusercontent.com/4b179PhoDOWf6W-TI7WXr3kCIQS0_lh_7P1iiVmB_c4Lo5buapPUNAkLegHNqaF4NKcvHcaE090HngEW_PjR8bPCZ3UTqGRnkMZZJCAzuwBRHZsi_46p8S42h4muoUptq-qrlGRX)
 
 Select both and then hit OK.
 
-\=============================================================\
-
-
-**Firefox Proxy Setup:**\
-
+### Firefox Proxy Setup
 
 ![](https://lh4.googleusercontent.com/JAoKQSMJ7N6RzquRfKerRYaO-KlqEFOY78cBBEFQM1oSoyNuCtaAOZx7CFB8gbeoCj_CJlEfIzO9pJT75EA2FhfMVg5jvIBkMIwvM_hF4Okcabu6S0sQt0KTxUMckN4T-9UWbiyR)
 
-&#x20;Go back to your Firefox preferences and search for “proxy”. Click Settings.
+Go back to your Firefox preferences and search for “proxy”. Click Settings.
 
 ![](https://lh4.googleusercontent.com/kv9khldkNj55yzZIVtmZEoaaDCmFUFNFjiT3AsFTSfFNy2fAjYm-KKxdAxJaU3Nfeiddjd3yLR7EBznqhw3lAkkg_Uu4z6z7r_Yt-ERacL2ZYOdxkO7Zi0ia_amkcT6s5aFxUsHS)
 
-Adjust your Manual Proxy Configuration to match and then click OK. \
+Adjust your Manual Proxy Configuration to match and then click OK.
 
 
 Now you’re set-up! Time to get into the fun stuff :)
@@ -131,10 +122,10 @@ Without your Zap application being authenticated, it can't scan pages that are o
 Lets go to the DVWA machine ([http://10.10.171.212](http://10.10.171.212/)), and login using the following credentials:\
 
 
-**Username**: admin**Password**: password \
+**Username**: admin **Password**: password
 ![](https://lh3.googleusercontent.com/vQqr9MiQKsRBoxeOtmi46APqHfX2AQIPl89jWc0CFMAJQ0PIpeMx6ViAwVmxW_O1iecnZ5JPPma4OlpQq-PYOMfx_zBnNN443uMfeHgV2Q_UkhSt-fOnlHAUAFJpQv4ZK0g6YZJT)
 
-&#x20;After logging in you should see this.&#x20;
+After logging in you should see this.
 
 ![](https://lh6.googleusercontent.com/DnffEIkiBTAB6EOO99JDaQho9iqCAvPpV-4fsT4Aep4xLof3RToyKx_Z-hW4s2NONOJ6FSwzaO-cEkkEITp2gbeWT9cTJmoauiQwca3XtMvGVJNHVhEeZmhkzfgQ_u5MRgB8X1hG)
 
@@ -150,7 +141,7 @@ We're going to pass our authentication token into ZAP so that we can use the too
 
 In ZAP open the HTTP Sessions tab with the new tab button, and set the authenticated session as active.
 
-&#x20;Now re-scan the application. You’ll see it’s able to pick up a lot more. This is because its able to see all of the sections of DVWA that was previously behind the login page.&#x20;
+Now re-scan the application. You’ll see it’s able to pick up a lot more. This is because its able to see all of the sections of DVWA that was previously behind the login page.
 
 ## Brute-force Directories
 
@@ -211,7 +202,7 @@ Want to further enhance ZAPs capabilities? Look at some of it’s downloadable e
 
 First navigate in your terminal somewhere you’d like to store the scripts
 
-\` git clone [https://github.com/bugcrowd/HUNT](https://github.com/bugcrowd/HUNT) \`
+`git clone [https://github.com/bugcrowd/HUNT](https://github.com/bugcrowd/HUNT)`
 
 ![](https://lh4.googleusercontent.com/zBrHAyWTsLGlJS4Nj4r_AeATc61_FTe9CUH_uxAKjH_GQEVSfnxuK2JpJlwdIlGVl0abgv8G_rTZEf-SXOUMtll7k300KjW0Shi-O5i-f9AC6w4Pvgthfi7_gF2wJUFMBpiJoAQx)
 
@@ -244,7 +235,6 @@ Desktop eManuel: [https://www.zaproxy.org/docs/desktop/ui/](https://www.zaproxy.
 OWASP ZAP Forums: [https://groups.google.com/forum/#!forum/zaproxy-users](https://groups.google.com/forum/#!forum/zaproxy-users)&#x20;
 
 ZAP in Ten: [https://www.alldaydevops.com/zap-in-ten](https://www.alldaydevops.com/zap-in-ten)\
-
 
 Yeah that's pretty much all there is. I wasn't kidding when I said "microscopic" in comparison to Burp suite.
 

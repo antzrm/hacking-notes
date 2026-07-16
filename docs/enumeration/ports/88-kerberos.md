@@ -108,7 +108,7 @@ Another resort is to use **cewl** to gather potential user/pass if there is a we
 
 ## Kerberos Attacks
 
-[#kerberos](../../post-exploitation/windows/ad/authentication.md#kerberos "mention")
+[#kerberos](mkdocs/hacking/docs/post-exploitation/windows/AD/authentication.md#kerberos "mention")
 
 ### Kerberoasting
 
@@ -153,16 +153,9 @@ Invoke-Kerberoast -OutputFormat hashcat |fl
 ### Overview
 Kerberoasting allows a user to request a service ticket for any service with a registered Service Principal Name (SPN, the mapping between service and account), and then use that ticket to crack the service password. If the service has a registered SPN then it can be Kerberoastable however the success of the attack depends on how strong the password is and if it is trackable as well as the privileges of the cracked service account. To enumerate Kerberoastable accounts I would suggest a tool like **BloodHound** to find all Kerberoastable accounts, it will allow you to see what kind of accounts you can kerberoast if they are domain admins, and what kind of connections they have to the rest of the domain.&#x20;
 
-#### What Can a Service Account do?
+### What Can a Service Account do?
 
 After cracking the service account password there are various ways of exfiltrating data or collecting loot depending on whether the service account is a domain admin or not. If the service account is a domain admin you have control similar to that of a golden/silver ticket and can now gather loot such as dumping the `NTDS.dit`. If the service account is not a domain admin you can use it to log into other systems and pivot or escalate or you can use that cracked password to spray against other service and domain admin accounts; many companies may reuse the same or similar passwords for their service or domain admin users. If you are in a professional pen test be aware of how the company wants you to show risk most of the time they don't want you to exfiltrate data and will set a goal or process for you to get in order to show risk inside of the assessment.
-
-
-### Mitigation
-* Strong Service Passwords - If the service account passwords are strong then kerberoasting will be ineffective
-* &#x20;Don't Make Service Accounts Domain Admins - Service accounts don't need to be domain admins, kerberoasting won't be as effective if you don't make service accounts domain admins.
-
-
 
 ### AS-REP Roasting
 
@@ -200,12 +193,6 @@ Very similar to Kerberoasting, AS-REP Roasting dumps the krbasrep5 hashes of use
 Among several tools, **Rubeus** is easier to use because it automatically finds AS-REP Roastable users whereas with GetNPUsers you have to enumerate the users beforehand and know which users may be AS-REP Roastable.
 
 
-### Mitigations
-* Have a strong password policy. With a strong password, the hashes will take longer to crack making this attack less effective
-* Don't turn off Kerberos Pre-Authentication unless it's necessary. There's almost no other way to completely mitigate this attack other than keeping Pre-Authentication on.
-
-
-
 ### Timeroasting
 
 [https://github.com/SecuraBV/Timeroast/blob/main/timeroast.ps1](https://github.com/SecuraBV/Timeroast/blob/main/timeroast.ps1)
@@ -214,9 +201,9 @@ Among several tools, **Rubeus** is easier to use because it automatically finds 
 
 ## Tickets
 
-[#tickets](../../post-exploitation/windows/ad/authentication.md#tickets "mention")
+[#tickets](mkdocs/hacking/docs/post-exploitation/windows/AD/authentication.md#tickets "mention")
 
-[#tickets](../../post-exploitation/windows/ad/persistence.md#tickets "mention")
+[#tickets](mkdocs/hacking/docs/post-exploitation/windows/AD/persistence.md#tickets "mention")
 
 > Info/Glossary:
 
@@ -580,12 +567,6 @@ Impacket v0.12.0 - Copyright Fortra, LLC and its affiliated companies
 ticketConverter.py kirbi_ticket.kirbi ccache_ticket.ccache
 ```
 
-### Mitigation
-Let's talk blue team and how to mitigate these types of attacks.&#x20;
-
-* Don't let your domain admins log onto anything except the domain controller - This is something so simple however a lot of domain admins still log onto low-level computers leaving tickets around that we can use to attack and move laterally with.
-
-
 ## Fix KRB\_AP\_ERR\_SKEW
 > Clock skew too great
 
@@ -639,7 +620,7 @@ dir \\Desktop-1\c$ /user:Machine1 mimikatz
 
 > Kerberos delegations allow services to access other services on behalf of domain users.
 
-[#kerberos-delegation](../../post-exploitation/windows/ad/exploitation.md#kerberos-delegation "mention")
+[#kerberos-delegation](mkdocs/hacking/docs/post-exploitation/windows/AD/exploitation.md#kerberos-delegation "mention")
 
 ```
 https://en.hackndo.com/constrained-unconstrained-delegation/
@@ -996,7 +977,13 @@ noPac.exe -domain mcafeelab.local -user "lowpriv" -pass "lowpriv" /dc dc.domain.
 ### User account 
 An alternative to using computer accounts is to have enough permissions against a user account \(cf\. [Access Controls abuse](https://www.thehacker.recipes/ad/movement/dacl/)\) to edit its sAMAccountNameattribute \(i\.e\. WritePropertyon the attribute, or on the « general information » or « public information » property sets, or GenericWrite, or GenericAll\)\.
 
-This  attack path also requires knowledge of the user account password or  hash \(to obtain a TGT\), which can be obtained \(or set\) in many ways  \(e\.g\. [Targeted Kerberoasting](https://www.thehacker.recipes/ad/movement/dacl/targeted-kerberoasting), [Shadow Credentials](https://www.thehacker.recipes/ad/movement/kerberos/shadow-credentials)
-, [Forced Password Change](https://www.thehacker.recipes/ad/movement/dacl/forcechangepassword)\)\.
+This  attack path also requires knowledge of the user account password or  hash \(to obtain a TGT\), which can be obtained \(or set\) in many ways  \(e\.g\. [Targeted Kerberoasting](https://www.thehacker.recipes/ad/movement/dacl/targeted-kerberoasting), [Shadow Credentials](https://www.thehacker.recipes/ad/movement/kerberos/shadow-credentials), [Forced Password Change](https://www.thehacker.recipes/ad/movement/dacl/forcechangepassword)\)\.
 
 Appart from the computer account creation and SPNs manipulation, the exploitation steps are the same as with a [machine account](https://www.thehacker.recipes/ad/movement/kerberos/samaccountname-spoofing#machine-account)\. If the account has SPNs that point to its name, they will have to be removed for the renaming operation to work\.
+
+## Mitigation
+* Strong Service Passwords - If the service account passwords are strong then kerberoasting will be ineffective
+* &#x20;Don't Make Service Accounts Domain Admins - Service accounts don't need to be domain admins, kerberoasting won't be as effective if you don't make service accounts domain admins.
+* Have a strong password policy. With a strong password, the hashes will take longer to crack making this attack less effective
+* Don't turn off Kerberos Pre-Authentication unless it's necessary. There's almost no other way to completely mitigate this attack other than keeping Pre-Authentication on.
+* Don't let your domain admins log onto anything except the domain controller - This is something so simple however a lot of domain admins still log onto low-level computers leaving tickets around that we can use to attack and move laterally with.

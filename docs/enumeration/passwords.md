@@ -22,7 +22,7 @@
 
 rockyou → Rank C → 7.54% → 1m NTLM  
 hashmob medium → Rank S → 15.42% → 1m NTLM  
-kaonashi → Rank B → 23.79% → 5m NTLM  
+[Kaonashi](https://github.com/kaonashi-passwords/Kaonashi) → Rank B → 23.79% → 5m NTLM  
 all-h → Rank 𝗦 → 38.50% → 𝟭𝟲𝗺 𝗡𝗧𝗟𝗠  
 all_in_one → Rank B → 41.40% → 2h 57m NTLM  
   
@@ -73,8 +73,7 @@ https://www.4armed.com/blog/perform-mask-attack-hashcat/
 
 ## kwprocessor
 
-It's common for users to create passwords based on keyboard sequences such as qwertyuiop or qazxsw. A wordlist with such passwords can be generated using kwprocessor.
-
+It's common for users to create passwords based on keyboard sequences such as `qwertyuiop` or `qazxsw`. A wordlist with such passwords can be generated using kwprocessor.
 
 ```bash
 https://github.com/hashcat/kwprocessor
@@ -82,7 +81,6 @@ git clone ...
 make
 ./kwp basechars/full.base keymaps/en-us.keymap routes/2-to-16-max-3-direction-changes.route > mykwplist.txt
 ```
-
 
 ## Collection of password lists
 
@@ -157,7 +155,6 @@ hydra -C combine.txt -f ftp://$IP
 
 
 ## Hashcat
-
 
 ```bash
 0       MD5
@@ -245,7 +242,6 @@ zip2john or rar2john → zip2john file.zip zip.hashes / john zip.hashes
 ```
 
 ## John
-
 
 ```bash
 https://www.openwall.com/john/
@@ -381,6 +377,11 @@ crunch 4 6 -f /usr/share/crunch/charset.lst mixalpha -o crunch.txt
 ### CUPP
 [https://github.com/Mebus/cupp](https://github.com/Mebus/cupp)
 
+## Generate Hashes
+
+https://linux.die.net/man/1/mkpasswd
+
+`mkpasswd -m sha-512 admin`
 
 
 ## Keepass

@@ -1,19 +1,43 @@
-https://docs.hackerone.com/en/articles/8368965-vdp-vs-bbp#gatsby-focus-wrapper
-https://www.hacker101.com/resources/articles/code_of_conduct
-https://hackerone.com/bug-bounty-programs
+
+[https://docs.hackerone.com/en/articles/8368965-vdp-vs-bbp#gatsby-focus-wrapper](https://docs.hackerone.com/en/articles/8368965-vdp-vs-bbp#gatsby-focus-wrapper)
+
+[https://www.hacker101.com/resources/articles/code_of_conduct](https://www.hacker101.com/resources/articles/code_of_conduct)
+
+[https://hackerone.com/bug-bounty-programs](https://hackerone.com/bug-bounty-programs)
+
+## Tips
+
+* Target VDPs before Bug Bounties
+* Break down complet concepts into manageable pieces and fill the gaps of knowledge
+
+## HackingHub
+
+[https://app.hackinghub.io/hubs](https://app.hackinghub.io/hubs)
+
+[https://hackerone.com/hacktivity/](https://hackerone.com/hacktivity/)
+
+[https://www.nahamsec.com/posts](https://www.nahamsec.com/posts)
+
+[https://samcurry.net/](https://samcurry.net/)
+
 ## Code of Conduct
-https://www.hacker101.com/resources/articles/code_of_conduct
+[https://www.hacker101.com/resources/articles/code_of_conduct](https://www.hacker101.com/resources/articles/code_of_conduct)
 ## Writing a Good Report
 [Common Weaknesses Enumeration (CWE)](https://cwe.mitre.org/)
+
 [Common Vulnerability Scoring System (CVSS)](https://www.first.org/cvss/)
+
 [CVSS Base Metrics](https://www.first.org/cvss/specification-document#Base-Metrics)
-|-----|-----|
+
+|||
+|---|---|
 |`Vulnerability Title`|Including vulnerability type, affected domain/parameter/endpoint, impact etc.|
 |`CWE & CVSS score`|For communicating the characteristics and severity of the vulnerability.|
 |`Vulnerability Description`|Better understanding of the vulnerability cause.|
 |`Proof of Concept (POC)`|Steps to reproduce exploiting the identified vulnerability clearly and concisely.|
 |`Impact`|Elaborate more on what an attacker can achieve by fully exploiting the vulnerability. Business impact and maximum damage should be included in the impact statement.|
 |`Remediation`|Optional in bug bounty programs, but good to have.|
+
 ### Examples
 |||
 |---|---|
@@ -61,3 +85,35 @@ https://www.hacker101.com/resources/articles/code_of_conduct
 `POC`
 `CVSS Score Breakdown`
 
+## Best Tools
+
+#### NMap - [nmap.org](https://nmap.org/)
+
+#### Masscan - [github.com/robertdavidgraham/masscan](https://github.com/robertdavidgraham/masscan)
+
+**subfinder (Subdomains)**
+
+```bash
+subfinder -d domain.com -silent -all
+subfinder -d domain.com -silent -all | httpx
+```
+
+#### Naabu - [github.com/projectdiscovery/naabu](https://github.com/projectdiscovery/naabu)
+
+#### Burp Suite - [portswigger.net/burp](https://portswigger.net/burp)
+
+#### wapiti [https://github.com/wapiti-scanner/wapiti](https://github.com/wapiti-scanner/wapiti)
+
+#### Caido - [caido.io](https://caido.io/)
+
+#### Waymore - [github.com/xnl-h4ck3r/waymore](https://github.com/xnl-h4ck3r/waymore)
+
+#### Waybackurls - [github.com/tomnomnom/waybackurls](https://github.com/tomnomnom/waybackurls)
+
+#### GetallUrl - [github.com/lc/gau](https://github.com/lc/gau)
+
+#### anew - [github.com/tomnomnom/anew](https://github.com/tomnomnom/anew)
+
+#### JSLinkFinder - [github.com/GerbenJavado/LinkFinder](https://github.com/GerbenJavado/LinkFinder)
+
+#### SourceMapper - [github.com/denandz/sourcemapper](https://github.com/denandz/sourcemapper)

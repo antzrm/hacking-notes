@@ -82,12 +82,6 @@ There are also methods we can use to access different things within our HTML fil
 * **onload**: Activates when the element has loaded
 * and many more that are used. You can find a complete list here: [https://www.w3schools.com/js/js\_htmldom\_events.asp](https://www.w3schools.com/js/js_htmldom_events.asp)
 
-Code example:
-
-![](https://raw.githubusercontent.com/GhostlyPy/javascriptbasics/master/DOM_POP.png)
-
-Now when a user clicks on the **Click Me** button, an alert pops up that says **POP!!!**
-
 The Document Object Model (DOM) has a ton of resources, and combining that with CSS will help your webpage **POP**. Eventually, if you take on web development or front-end programming, then you'll not only gain knowledge around the DOM, but you'll be able to manipulate a virtual DOM using React, cut your code in half using jQuery, and even combine your skills with PHP or Nodejs files for server manipulation. Good luck with your continued journey to learn JavaScript, and remember it can do so much more than just create webpages and add interactiveness.
 
 ## References

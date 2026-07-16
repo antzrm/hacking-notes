@@ -1,4 +1,3 @@
-## Volatility
 
 At the time of writing, there are two versions of Volatility: [Volatility 2](https://github.com/volatilityfoundation/volatility), which is built using Python 2, and [Volatility 3](https://github.com/volatilityfoundation/volatility3), which uses Python 3. There are different use cases for each version, and depending on this, you might choose either one over the other. For example, Volatility 2 has been around for longer, so in some cases, it will have modules and plugins that have yet to be adapted to Volatility 3. For the purposes of this task, we're using Volatility 2.
 

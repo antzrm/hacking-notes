@@ -107,6 +107,7 @@ https://github.com/lightspin-tech/red-kube
 | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [https://blog.trailofbits.com/2019/07/19/understanding-docker-container-escapes/](https://blog.trailofbits.com/2019/07/19/understanding-docker-container-escapes/)                                                                       |
 | [https://0xdf.gitlab.io/2021/05/17/digging-into-cgroups.html](https://0xdf.gitlab.io/2021/05/17/digging-into-cgroups.html)                                                                                                               |
+| [https://swisskyrepo.github.io/InternalAllTheThings/containers/docker/#breaking-out-of-docker-via-runc](https://swisskyrepo.github.io/InternalAllTheThings/containers/docker/#breaking-out-of-docker-via-runc)                           |
 
 ???+ tip
     It is common if the IP of the docker container is 172.16.0.X and X is not 1, the host IP and **gateway** should be 172.16.0.1 and that is the IP we can communicate to in order to scan ports, to access webservers, etc.

