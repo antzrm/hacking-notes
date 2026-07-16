@@ -2,934 +2,906 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://antzrm.github.io/hacking-notes/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/AI/AI%20Data%20Attacks/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/AI/Applications/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/AI/Fundamentals/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/AI/LLM%20Output%20Attacks/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/AI/Prompt%20Injection/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/AI/Red%20Teaming%20AI/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/CTFs/bandit/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/enumeration/active-information-gathering/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/enumeration/packet-sniffing/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/enumeration/passive-information-gathering/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/enumeration/passwords/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/enumeration/other-technologies/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/enumeration/other-technologies/Kubernetes/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/enumeration/other-technologies/ansible/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/enumeration/other-technologies/docker/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/enumeration/other-technologies/glpi/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/enumeration/other-technologies/inspect-code-debugger/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/enumeration/other-technologies/microsoft-office/</loc>
-         <lastmod>2026-07-10</lastmod>
-    </url>
-    <url>
-         <loc>https://antzrm.github.io/hacking-notes/enumeration/other-technologies/sqlite/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/enumeration/other-technologies/cloud/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/enumeration/other-technologies/cloud/AWS/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/enumeration/ports/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/enumeration/ports/10000-20000-webmin-usermin/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/enumeration/ports/1050-1098-1099-java-rmi/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/enumeration/ports/110-995-pop-%2B-pop-ssl/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/enumeration/ports/111-2049-nfs/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/enumeration/ports/111-rpc-portmapper/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/enumeration/ports/113-ident/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/enumeration/ports/119-nntp/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/enumeration/ports/135-msrpc/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/enumeration/ports/143-imap/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/enumeration/ports/1435-mssql/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/enumeration/ports/161-162-udp-snmp/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/enumeration/ports/1978-unisql/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/enumeration/ports/21-ftp/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
+    </url>
+    <url>
+         <loc>https://antzrm.github.io/hacking-notes/enumeration/ports/22-SSH/</loc>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/enumeration/ports/23-telnet/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/enumeration/ports/2375-docker/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/enumeration/ports/25-587-smtp/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
-         <loc>https://antzrm.github.io/hacking-notes/enumeration/ports/27017-19-27080-28017-mongodb/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <loc>https://antzrm.github.io/hacking-notes/enumeration/ports/27017-19-28017-mongodb/</loc>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/enumeration/ports/3128-squid/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/enumeration/ports/3306-mysql/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/enumeration/ports/3389-rdp/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/enumeration/ports/3690-subversion/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/enumeration/ports/389-636-ldap/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/enumeration/ports/4369-erlang/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
+    </url>
+    <url>
+         <loc>https://antzrm.github.io/hacking-notes/enumeration/ports/445-SMB/</loc>
+         <lastmod>2026-07-16</lastmod>
+    </url>
+    <url>
+         <loc>https://antzrm.github.io/hacking-notes/enumeration/ports/53-DNS/</loc>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/enumeration/ports/5432-5435-postgresql/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/enumeration/ports/5555-adb/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/enumeration/ports/5800-5801-5900-5901-vnc/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/enumeration/ports/5984-6984-couchdb/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/enumeration/ports/5985-5986-winrm/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/enumeration/ports/6000-x11/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
+    </url>
+    <url>
+         <loc>https://antzrm.github.io/hacking-notes/enumeration/ports/623-IPMI/</loc>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/enumeration/ports/6379-redis/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/enumeration/ports/69-tftp-udp/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/enumeration/ports/79-finger/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/enumeration/ports/80-443-8080-http-s/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/enumeration/ports/8089-splunk/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/enumeration/ports/873-rsync/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/enumeration/ports/88-kerberos/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/enumeration/ports/9200-elasticsearch/</loc>
-         <lastmod>2026-07-10</lastmod>
-    </url>
-    <url>
-         <loc>https://antzrm.github.io/hacking-notes/enumeration/ports/dns/</loc>
-         <lastmod>2026-07-10</lastmod>
-    </url>
-    <url>
-         <loc>https://antzrm.github.io/hacking-notes/enumeration/ports/ipmi-udp/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/enumeration/ports/irc/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/enumeration/ports/nmap/</loc>
-         <lastmod>2026-07-10</lastmod>
-    </url>
-    <url>
-         <loc>https://antzrm.github.io/hacking-notes/enumeration/ports/page/</loc>
-         <lastmod>2026-07-10</lastmod>
-    </url>
-    <url>
-         <loc>https://antzrm.github.io/hacking-notes/enumeration/ports/smb/</loc>
-         <lastmod>2026-07-10</lastmod>
-    </url>
-    <url>
-         <loc>https://antzrm.github.io/hacking-notes/enumeration/ports/ssh/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/enumeration/ports/werkzeug/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/enumeration/web-pentesting/</loc>
-         <lastmod>2026-07-10</lastmod>
-    </url>
-    <url>
-         <loc>https://antzrm.github.io/hacking-notes/enumeration/web-pentesting/Attacking%20Common%20Applications/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/enumeration/web-pentesting/Broken%20Authentication/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
-         <loc>https://antzrm.github.io/hacking-notes/enumeration/web-pentesting/File%20Inclusion/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <loc>https://antzrm.github.io/hacking-notes/enumeration/web-pentesting/Common%20Applications/</loc>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/enumeration/web-pentesting/HTTP%20Verb%20Tampering/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/enumeration/web-pentesting/Javascript%20Deobfuscation/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/enumeration/web-pentesting/Login%20Brute%20Forcing/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/enumeration/web-pentesting/Mass%20Assignment/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/enumeration/web-pentesting/SSI%20Injection/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/enumeration/web-pentesting/XSLT%20Injection/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/enumeration/web-pentesting/access-control/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
-         <loc>https://antzrm.github.io/hacking-notes/enumeration/web-pentesting/authenticate/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <loc>https://antzrm.github.io/hacking-notes/enumeration/web-pentesting/authentication/</loc>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/enumeration/web-pentesting/business-logic/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/enumeration/web-pentesting/clickjacking-ui-redressing/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/enumeration/web-pentesting/command-injection/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/enumeration/web-pentesting/cors/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/enumeration/web-pentesting/csrf/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/enumeration/web-pentesting/denial-of-service-dos/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/enumeration/web-pentesting/deserialization/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/enumeration/web-pentesting/directory-traversal/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/enumeration/web-pentesting/file-upload/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/enumeration/web-pentesting/fixing-web-exploits/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/enumeration/web-pentesting/fuzzing-bruteforcing/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/enumeration/web-pentesting/http-host-header-attacks/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/enumeration/web-pentesting/http-request-smuggling/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/enumeration/web-pentesting/http-response-splitting/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/enumeration/web-pentesting/idor/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/enumeration/web-pentesting/information-disclosure/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/enumeration/web-pentesting/insecure-cookies/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/enumeration/web-pentesting/insecure-deserialization/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/enumeration/web-pentesting/jwt/</loc>
-         <lastmod>2026-07-10</lastmod>
-    </url>
-    <url>
-         <loc>https://antzrm.github.io/hacking-notes/enumeration/web-pentesting/lfi/</loc>
-         <lastmod>2026-07-10</lastmod>
-    </url>
-    <url>
-         <loc>https://antzrm.github.io/hacking-notes/enumeration/web-pentesting/llm-ai/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/enumeration/web-pentesting/open-redirect/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/enumeration/web-pentesting/others/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/enumeration/web-pentesting/padding-oracle/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/enumeration/web-pentesting/prototype-pollution/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/enumeration/web-pentesting/race-conditions/</loc>
-         <lastmod>2026-07-10</lastmod>
-    </url>
-    <url>
-         <loc>https://antzrm.github.io/hacking-notes/enumeration/web-pentesting/rfi/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/enumeration/web-pentesting/soap/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/enumeration/web-pentesting/ssrf/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/enumeration/web-pentesting/ssti/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/enumeration/web-pentesting/tools/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/enumeration/web-pentesting/type-juggling/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/enumeration/web-pentesting/web-cache-deception/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/enumeration/web-pentesting/websocket/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/enumeration/web-pentesting/xpath/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/enumeration/web-pentesting/xss/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/enumeration/web-pentesting/xxe/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
-         <loc>https://antzrm.github.io/hacking-notes/enumeration/web-pentesting/api/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <loc>https://antzrm.github.io/hacking-notes/enumeration/web-pentesting/API/</loc>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
-         <loc>https://antzrm.github.io/hacking-notes/enumeration/web-pentesting/api/API%20Fuzzing/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <loc>https://antzrm.github.io/hacking-notes/enumeration/web-pentesting/API/API%20Fuzzing/</loc>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
-         <loc>https://antzrm.github.io/hacking-notes/enumeration/web-pentesting/api/Authentication/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <loc>https://antzrm.github.io/hacking-notes/enumeration/web-pentesting/API/Authentication/</loc>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
-         <loc>https://antzrm.github.io/hacking-notes/enumeration/web-pentesting/api/Authorization/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <loc>https://antzrm.github.io/hacking-notes/enumeration/web-pentesting/API/Authorization/</loc>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
-         <loc>https://antzrm.github.io/hacking-notes/enumeration/web-pentesting/api/Endpoint%20Analysis/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <loc>https://antzrm.github.io/hacking-notes/enumeration/web-pentesting/API/Endpoint%20Analysis/</loc>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
-         <loc>https://antzrm.github.io/hacking-notes/enumeration/web-pentesting/api/Identifying%20Endpoints/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <loc>https://antzrm.github.io/hacking-notes/enumeration/web-pentesting/API/Identifying%20Endpoints/</loc>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
-         <loc>https://antzrm.github.io/hacking-notes/enumeration/web-pentesting/api/Recon/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <loc>https://antzrm.github.io/hacking-notes/enumeration/web-pentesting/API/Recon/</loc>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
-         <loc>https://antzrm.github.io/hacking-notes/enumeration/web-pentesting/api/Web%20Services%20and%20APIs/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <loc>https://antzrm.github.io/hacking-notes/enumeration/web-pentesting/API/Web%20Services%20and%20APIs/</loc>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
-         <loc>https://antzrm.github.io/hacking-notes/enumeration/web-pentesting/api/graphql-api/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <loc>https://antzrm.github.io/hacking-notes/enumeration/web-pentesting/API/graphql-api/</loc>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
-         <loc>https://antzrm.github.io/hacking-notes/enumeration/web-pentesting/sql-injection-sqli/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <loc>https://antzrm.github.io/hacking-notes/enumeration/web-pentesting/File%20Inclusion/File%20Inclusion/</loc>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
-         <loc>https://antzrm.github.io/hacking-notes/enumeration/web-pentesting/sql-injection-sqli/h2-database-java/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <loc>https://antzrm.github.io/hacking-notes/enumeration/web-pentesting/File%20Inclusion/LFI/</loc>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
-         <loc>https://antzrm.github.io/hacking-notes/enumeration/web-pentesting/sql-injection-sqli/mssql/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <loc>https://antzrm.github.io/hacking-notes/enumeration/web-pentesting/File%20Inclusion/RFI/</loc>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
-         <loc>https://antzrm.github.io/hacking-notes/enumeration/web-pentesting/sql-injection-sqli/nosqli/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <loc>https://antzrm.github.io/hacking-notes/enumeration/web-pentesting/SQLi/</loc>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
-         <loc>https://antzrm.github.io/hacking-notes/enumeration/web-pentesting/sql-injection-sqli/oracle-sqlplus/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <loc>https://antzrm.github.io/hacking-notes/enumeration/web-pentesting/SQLi/h2-database-java/</loc>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
-         <loc>https://antzrm.github.io/hacking-notes/enumeration/web-pentesting/sql-injection-sqli/postgresqli/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <loc>https://antzrm.github.io/hacking-notes/enumeration/web-pentesting/SQLi/mssql/</loc>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
-         <loc>https://antzrm.github.io/hacking-notes/enumeration/web-pentesting/sql-injection-sqli/scripts/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <loc>https://antzrm.github.io/hacking-notes/enumeration/web-pentesting/SQLi/nosqli/</loc>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
-         <loc>https://antzrm.github.io/hacking-notes/enumeration/web-pentesting/sql-injection-sqli/sqlite/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <loc>https://antzrm.github.io/hacking-notes/enumeration/web-pentesting/SQLi/oracle-sqlplus/</loc>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
-         <loc>https://antzrm.github.io/hacking-notes/enumeration/web-pentesting/sql-injection-sqli/sqlmap/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <loc>https://antzrm.github.io/hacking-notes/enumeration/web-pentesting/SQLi/postgresqli/</loc>
+         <lastmod>2026-07-16</lastmod>
+    </url>
+    <url>
+         <loc>https://antzrm.github.io/hacking-notes/enumeration/web-pentesting/SQLi/scripts/</loc>
+         <lastmod>2026-07-16</lastmod>
+    </url>
+    <url>
+         <loc>https://antzrm.github.io/hacking-notes/enumeration/web-pentesting/SQLi/sqlite/</loc>
+         <lastmod>2026-07-16</lastmod>
+    </url>
+    <url>
+         <loc>https://antzrm.github.io/hacking-notes/enumeration/web-pentesting/SQLi/sqlmap/</loc>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/enumeration/web-technologies/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/enumeration/web-technologies/ASP.net/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
+    </url>
+    <url>
+         <loc>https://antzrm.github.io/hacking-notes/enumeration/web-technologies/CGI/</loc>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/enumeration/web-technologies/ColdFusion/</loc>
-         <lastmod>2026-07-10</lastmod>
-    </url>
-    <url>
-         <loc>https://antzrm.github.io/hacking-notes/enumeration/web-technologies/Common%20Gateway%20Interface%20%28CGI%29/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/enumeration/web-technologies/Gitlab/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/enumeration/web-technologies/NET/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
+    </url>
+    <url>
+         <loc>https://antzrm.github.io/hacking-notes/enumeration/web-technologies/PHP/</loc>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/enumeration/web-technologies/PRTG%20Network%20Monitor/</loc>
-         <lastmod>2026-07-10</lastmod>
-    </url>
-    <url>
-         <loc>https://antzrm.github.io/hacking-notes/enumeration/web-technologies/Splunk/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/enumeration/web-technologies/Tomcat%20CGI/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/enumeration/web-technologies/django/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/enumeration/web-technologies/drupal/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/enumeration/web-technologies/git/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/enumeration/web-technologies/grafana/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/enumeration/web-technologies/graphql/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/enumeration/web-technologies/h2-database/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/enumeration/web-technologies/iis/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/enumeration/web-technologies/java/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/enumeration/web-technologies/javascript/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/enumeration/web-technologies/jenkins/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/enumeration/web-technologies/joomla/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/enumeration/web-technologies/laravel/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/enumeration/web-technologies/lua-lsp/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/enumeration/web-technologies/magento/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/enumeration/web-technologies/nodejs-express/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/enumeration/web-technologies/osTicket/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
-         <loc>https://antzrm.github.io/hacking-notes/enumeration/web-technologies/php/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <loc>https://antzrm.github.io/hacking-notes/enumeration/web-technologies/phpMyAdmin/</loc>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/enumeration/web-technologies/python/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/enumeration/web-technologies/ruby-on-rails/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/enumeration/web-technologies/tomcat/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/enumeration/web-technologies/webassembly/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/enumeration/web-technologies/webdav/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/enumeration/web-technologies/wordpress/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/exploitation/buffer-overflow/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/exploitation/client-side-attacks/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/exploitation/file-transfer/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/exploitation/shells/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
-         <loc>https://antzrm.github.io/hacking-notes/misc/AI/</loc>
-         <lastmod>2026-07-10</lastmod>
-    </url>
-    <url>
-         <loc>https://antzrm.github.io/hacking-notes/misc/Applications%20Connecting%20to%20Services/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <loc>https://antzrm.github.io/hacking-notes/misc/Apps%20Connecting%20to%20Services/</loc>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/misc/Bug%20Bounty%20Hunting/</loc>
-         <lastmod>2026-07-10</lastmod>
-    </url>
-    <url>
-         <loc>https://antzrm.github.io/hacking-notes/misc/Phishing/</loc>
-         <lastmod>2026-07-10</lastmod>
-    </url>
-    <url>
-         <loc>https://antzrm.github.io/hacking-notes/misc/TEMPPPPPPPPP%21%21%21%21%21%21%21%21%21%21%21/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/misc/Thick%20Client%20Applications/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/misc/blue-team/</loc>
-         <lastmod>2026-07-10</lastmod>
-    </url>
-    <url>
-         <loc>https://antzrm.github.io/hacking-notes/misc/bug-bounty/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/misc/cryptography/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/misc/curso-s4vitar/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/misc/devops/</loc>
-         <lastmod>2026-07-10</lastmod>
-    </url>
-    <url>
-         <loc>https://antzrm.github.io/hacking-notes/misc/forensics-incident-response/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/misc/geoint/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/misc/master/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/misc/mobile-pentesting/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/misc/osint/</loc>
-         <lastmod>2026-07-10</lastmod>
-    </url>
-    <url>
-         <loc>https://antzrm.github.io/hacking-notes/misc/red-teaming-c2/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/misc/reverse-engineering/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/misc/scripting/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/misc/stego/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/misc/forensics/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/misc/forensics/Detecting%20C2/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
+    </url>
+    <url>
+         <loc>https://antzrm.github.io/hacking-notes/misc/forensics/Intro/</loc>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/misc/forensics/Malware%20Analysis/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/misc/forensics/OT/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/misc/forensics/Obfuscation/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/misc/forensics/Volatility/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/misc/forensics/Windows%20Registry/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/misc/forensics/anti-forensics/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
-         <loc>https://antzrm.github.io/hacking-notes/misc/tools/cURL/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <loc>https://antzrm.github.io/hacking-notes/misc/red-team-c2/Phishing/</loc>
+         <lastmod>2026-07-16</lastmod>
+    </url>
+    <url>
+         <loc>https://antzrm.github.io/hacking-notes/misc/red-team-c2/red-team-c2/</loc>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/post-exploitation/data-exfiltration/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/post-exploitation/lateral-movement/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/post-exploitation/port-redirection-and-tunneling/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/post-exploitation/linux/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/post-exploitation/linux/persistence/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/post-exploitation/linux/sudo-exploitation-and-cves/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/post-exploitation/linux/suid-groups-privesc/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/post-exploitation/linux/untitled/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/post-exploitation/windows/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
+    </url>
+    <url>
+         <loc>https://antzrm.github.io/hacking-notes/post-exploitation/windows/Commands/</loc>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/post-exploitation/windows/Living%20Off%20The%20Land/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
+    </url>
+    <url>
+         <loc>https://antzrm.github.io/hacking-notes/post-exploitation/windows/UAC%20Bypass/</loc>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/post-exploitation/windows/av-evasion/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/post-exploitation/windows/exploits/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/post-exploitation/windows/fw-evasion/</loc>
-         <lastmod>2026-07-10</lastmod>
-    </url>
-    <url>
-         <loc>https://antzrm.github.io/hacking-notes/post-exploitation/windows/permissions/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/post-exploitation/windows/persistence/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/post-exploitation/windows/powershell/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
-         <loc>https://antzrm.github.io/hacking-notes/post-exploitation/windows/uac-bypass/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <loc>https://antzrm.github.io/hacking-notes/post-exploitation/windows/AD/</loc>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
-         <loc>https://antzrm.github.io/hacking-notes/post-exploitation/windows/ad/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <loc>https://antzrm.github.io/hacking-notes/post-exploitation/windows/AD/DACL/</loc>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
-         <loc>https://antzrm.github.io/hacking-notes/post-exploitation/windows/ad/DACL/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <loc>https://antzrm.github.io/hacking-notes/post-exploitation/windows/AD/adcs-active-directory-certificate-services/</loc>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
-         <loc>https://antzrm.github.io/hacking-notes/post-exploitation/windows/ad/adcs-active-directory-certificate-services/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <loc>https://antzrm.github.io/hacking-notes/post-exploitation/windows/AD/authentication/</loc>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
-         <loc>https://antzrm.github.io/hacking-notes/post-exploitation/windows/ad/authentication/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <loc>https://antzrm.github.io/hacking-notes/post-exploitation/windows/AD/credential-harvesting/</loc>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
-         <loc>https://antzrm.github.io/hacking-notes/post-exploitation/windows/ad/credential-harvesting/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <loc>https://antzrm.github.io/hacking-notes/post-exploitation/windows/AD/enumeration/</loc>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
-         <loc>https://antzrm.github.io/hacking-notes/post-exploitation/windows/ad/enumeration/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <loc>https://antzrm.github.io/hacking-notes/post-exploitation/windows/AD/exploitation/</loc>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
-         <loc>https://antzrm.github.io/hacking-notes/post-exploitation/windows/ad/exploitation/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <loc>https://antzrm.github.io/hacking-notes/post-exploitation/windows/AD/initial-access-breaching/</loc>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
-         <loc>https://antzrm.github.io/hacking-notes/post-exploitation/windows/ad/initial-access-breaching/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <loc>https://antzrm.github.io/hacking-notes/post-exploitation/windows/AD/persistence/</loc>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
-         <loc>https://antzrm.github.io/hacking-notes/post-exploitation/windows/ad/mind-maps/</loc>
-         <lastmod>2026-07-10</lastmod>
-    </url>
-    <url>
-         <loc>https://antzrm.github.io/hacking-notes/post-exploitation/windows/ad/persistence/</loc>
-         <lastmod>2026-07-10</lastmod>
-    </url>
-    <url>
-         <loc>https://antzrm.github.io/hacking-notes/post-exploitation/windows/ad/trusts/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <loc>https://antzrm.github.io/hacking-notes/post-exploitation/windows/AD/trusts/</loc>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/tools/burp-suite/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
+    </url>
+    <url>
+         <loc>https://antzrm.github.io/hacking-notes/tools/cURL/</loc>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/tools/empire/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/tools/metasploit/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/tools/netexec/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://antzrm.github.io/hacking-notes/tools/owasp-zap/</loc>
-         <lastmod>2026-07-10</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
 </urlset>
